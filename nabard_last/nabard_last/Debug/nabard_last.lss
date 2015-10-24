@@ -1,0 +1,3088 @@
+
+nabard_last.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000f78  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         000000a0  00800060  00000f78  0000100c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000028  00800100  00800100  000010ac  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000010ac  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 000002e8  00000000  00000000  000010dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00005d3e  00000000  00000000  000013c4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000ccd  00000000  00000000  00007102  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000fd2  00000000  00000000  00007dcf  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000980  00000000  00000000  00008da4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00001759  00000000  00000000  00009724  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000043e0  00000000  00000000  0000ae7d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000328  00000000  00000000  0000f25d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 65 00 	jmp	0xca	; 0xca <__ctors_end>
+   4:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+   8:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+   c:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  10:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  14:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  18:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  1c:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  20:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  24:	0c 94 dd 06 	jmp	0xdba	; 0xdba <__vector_9>
+  28:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  2c:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  30:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  34:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  38:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  3c:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  40:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  44:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  48:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  4c:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+  50:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__bad_interrupt>
+
+00000054 <__trampolines_end>:
+  54:	00 00       	nop
+  56:	00 01       	movw	r0, r0
+	...
+  60:	04 03       	mulsu	r16, r20
+  62:	00 06       	cpc	r0, r16
+	...
+
+00000074 <digital_pin_to_bit_mask_PGM>:
+  74:	01 02 04 08 10 20 40 80 01 02 04 08 10 20 40 80     ..... @...... @.
+  84:	01 02 04 08 10 20 40 80 80 40 20 10 08 04 02 01     ..... @..@ .....
+
+00000094 <digital_pin_to_port_PGM>:
+  94:	02 02 02 02 02 02 02 02 04 04 04 04 04 04 04 04     ................
+  a4:	03 03 03 03 03 03 03 03 01 01 01 01 01 01 01 01     ................
+
+000000b4 <port_to_output_PGM>:
+  b4:	00 00 3b 00 38 00 35 00 32 00                       ..;.8.5.2.
+
+000000be <port_to_mode_PGM>:
+  be:	00 00 3a 00 37 00 34 00 31 00                       ..:.7.4.1.
+
+000000c8 <__ctors_start>:
+  c8:	7c 06       	cpc	r7, r28
+
+000000ca <__ctors_end>:
+  ca:	11 24       	eor	r1, r1
+  cc:	1f be       	out	0x3f, r1	; 63
+  ce:	cf e5       	ldi	r28, 0x5F	; 95
+  d0:	d4 e0       	ldi	r29, 0x04	; 4
+  d2:	de bf       	out	0x3e, r29	; 62
+  d4:	cd bf       	out	0x3d, r28	; 61
+
+000000d6 <__do_copy_data>:
+  d6:	11 e0       	ldi	r17, 0x01	; 1
+  d8:	a0 e6       	ldi	r26, 0x60	; 96
+  da:	b0 e0       	ldi	r27, 0x00	; 0
+  dc:	e8 e7       	ldi	r30, 0x78	; 120
+  de:	ff e0       	ldi	r31, 0x0F	; 15
+  e0:	02 c0       	rjmp	.+4      	; 0xe6 <__do_copy_data+0x10>
+  e2:	05 90       	lpm	r0, Z+
+  e4:	0d 92       	st	X+, r0
+  e6:	a0 30       	cpi	r26, 0x00	; 0
+  e8:	b1 07       	cpc	r27, r17
+  ea:	d9 f7       	brne	.-10     	; 0xe2 <__do_copy_data+0xc>
+
+000000ec <__do_clear_bss>:
+  ec:	21 e0       	ldi	r18, 0x01	; 1
+  ee:	a0 e0       	ldi	r26, 0x00	; 0
+  f0:	b1 e0       	ldi	r27, 0x01	; 1
+  f2:	01 c0       	rjmp	.+2      	; 0xf6 <.do_clear_bss_start>
+
+000000f4 <.do_clear_bss_loop>:
+  f4:	1d 92       	st	X+, r1
+
+000000f6 <.do_clear_bss_start>:
+  f6:	a8 32       	cpi	r26, 0x28	; 40
+  f8:	b2 07       	cpc	r27, r18
+  fa:	e1 f7       	brne	.-8      	; 0xf4 <.do_clear_bss_loop>
+
+000000fc <__do_global_ctors>:
+  fc:	10 e0       	ldi	r17, 0x00	; 0
+  fe:	ca ec       	ldi	r28, 0xCA	; 202
+ 100:	d0 e0       	ldi	r29, 0x00	; 0
+ 102:	04 c0       	rjmp	.+8      	; 0x10c <__do_global_ctors+0x10>
+ 104:	22 97       	sbiw	r28, 0x02	; 2
+ 106:	fe 01       	movw	r30, r28
+ 108:	0e 94 b6 07 	call	0xf6c	; 0xf6c <__tablejump__>
+ 10c:	c8 3c       	cpi	r28, 0xC8	; 200
+ 10e:	d1 07       	cpc	r29, r17
+ 110:	c9 f7       	brne	.-14     	; 0x104 <__do_global_ctors+0x8>
+ 112:	0e 94 69 04 	call	0x8d2	; 0x8d2 <main>
+ 116:	0c 94 ba 07 	jmp	0xf74	; 0xf74 <_exit>
+
+0000011a <__bad_interrupt>:
+ 11a:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000011e <_ZN13LiquidCrystal11pulseEnableEv>:
+    write4bits(value>>4);
+    write4bits(value);
+  }
+}
+
+void LiquidCrystal::pulseEnable(void) {
+ 11e:	cf 93       	push	r28
+ 120:	df 93       	push	r29
+ 122:	ec 01       	movw	r28, r24
+  digitalWrite(_enable_pin, LOW);
+ 124:	60 e0       	ldi	r22, 0x00	; 0
+ 126:	8e 81       	ldd	r24, Y+6	; 0x06
+ 128:	0e 94 83 07 	call	0xf06	; 0xf06 <digitalWrite>
+  delayMicroseconds(1);    
+ 12c:	81 e0       	ldi	r24, 0x01	; 1
+ 12e:	90 e0       	ldi	r25, 0x00	; 0
+ 130:	0e 94 27 07 	call	0xe4e	; 0xe4e <delayMicroseconds>
+  digitalWrite(_enable_pin, HIGH);
+ 134:	61 e0       	ldi	r22, 0x01	; 1
+ 136:	8e 81       	ldd	r24, Y+6	; 0x06
+ 138:	0e 94 83 07 	call	0xf06	; 0xf06 <digitalWrite>
+  delayMicroseconds(1);    // enable pulse must be >450ns
+ 13c:	81 e0       	ldi	r24, 0x01	; 1
+ 13e:	90 e0       	ldi	r25, 0x00	; 0
+ 140:	0e 94 27 07 	call	0xe4e	; 0xe4e <delayMicroseconds>
+  digitalWrite(_enable_pin, LOW);
+ 144:	60 e0       	ldi	r22, 0x00	; 0
+ 146:	8e 81       	ldd	r24, Y+6	; 0x06
+ 148:	0e 94 83 07 	call	0xf06	; 0xf06 <digitalWrite>
+  delayMicroseconds(100);   // commands need > 37us to settle
+ 14c:	84 e6       	ldi	r24, 0x64	; 100
+ 14e:	90 e0       	ldi	r25, 0x00	; 0
+ 150:	0e 94 27 07 	call	0xe4e	; 0xe4e <delayMicroseconds>
+}
+ 154:	df 91       	pop	r29
+ 156:	cf 91       	pop	r28
+ 158:	08 95       	ret
+
+0000015a <_ZN13LiquidCrystal10write4bitsEh>:
+
+void LiquidCrystal::write4bits(uint8_t value) {
+ 15a:	af 92       	push	r10
+ 15c:	bf 92       	push	r11
+ 15e:	cf 92       	push	r12
+ 160:	df 92       	push	r13
+ 162:	ef 92       	push	r14
+ 164:	ff 92       	push	r15
+ 166:	0f 93       	push	r16
+ 168:	1f 93       	push	r17
+ 16a:	cf 93       	push	r28
+ 16c:	df 93       	push	r29
+ 16e:	5c 01       	movw	r10, r24
+ 170:	8c 01       	movw	r16, r24
+ 172:	09 5f       	subi	r16, 0xF9	; 249
+ 174:	1f 4f       	sbci	r17, 0xFF	; 255
+  for (int i = 0; i < 4; i++) {
+ 176:	c0 e0       	ldi	r28, 0x00	; 0
+ 178:	d0 e0       	ldi	r29, 0x00	; 0
+    pinMode(_data_pins[i], OUTPUT);
+    digitalWrite(_data_pins[i], (value >> i) & 0x01);
+ 17a:	c6 2e       	mov	r12, r22
+ 17c:	d1 2c       	mov	r13, r1
+ 17e:	78 01       	movw	r14, r16
+  delayMicroseconds(100);   // commands need > 37us to settle
+}
+
+void LiquidCrystal::write4bits(uint8_t value) {
+  for (int i = 0; i < 4; i++) {
+    pinMode(_data_pins[i], OUTPUT);
+ 180:	61 e0       	ldi	r22, 0x01	; 1
+ 182:	f8 01       	movw	r30, r16
+ 184:	81 91       	ld	r24, Z+
+ 186:	8f 01       	movw	r16, r30
+ 188:	0e 94 45 07 	call	0xe8a	; 0xe8a <pinMode>
+    digitalWrite(_data_pins[i], (value >> i) & 0x01);
+ 18c:	b6 01       	movw	r22, r12
+ 18e:	0c 2e       	mov	r0, r28
+ 190:	02 c0       	rjmp	.+4      	; 0x196 <_ZN13LiquidCrystal10write4bitsEh+0x3c>
+ 192:	75 95       	asr	r23
+ 194:	67 95       	ror	r22
+ 196:	0a 94       	dec	r0
+ 198:	e2 f7       	brpl	.-8      	; 0x192 <_ZN13LiquidCrystal10write4bitsEh+0x38>
+ 19a:	61 70       	andi	r22, 0x01	; 1
+ 19c:	f7 01       	movw	r30, r14
+ 19e:	80 81       	ld	r24, Z
+ 1a0:	0e 94 83 07 	call	0xf06	; 0xf06 <digitalWrite>
+  digitalWrite(_enable_pin, LOW);
+  delayMicroseconds(100);   // commands need > 37us to settle
+}
+
+void LiquidCrystal::write4bits(uint8_t value) {
+  for (int i = 0; i < 4; i++) {
+ 1a4:	21 96       	adiw	r28, 0x01	; 1
+ 1a6:	c4 30       	cpi	r28, 0x04	; 4
+ 1a8:	d1 05       	cpc	r29, r1
+ 1aa:	49 f7       	brne	.-46     	; 0x17e <_ZN13LiquidCrystal10write4bitsEh+0x24>
+    pinMode(_data_pins[i], OUTPUT);
+    digitalWrite(_data_pins[i], (value >> i) & 0x01);
+  }
+
+  pulseEnable();
+ 1ac:	c5 01       	movw	r24, r10
+ 1ae:	0e 94 8f 00 	call	0x11e	; 0x11e <_ZN13LiquidCrystal11pulseEnableEv>
+}
+ 1b2:	df 91       	pop	r29
+ 1b4:	cf 91       	pop	r28
+ 1b6:	1f 91       	pop	r17
+ 1b8:	0f 91       	pop	r16
+ 1ba:	ff 90       	pop	r15
+ 1bc:	ef 90       	pop	r14
+ 1be:	df 90       	pop	r13
+ 1c0:	cf 90       	pop	r12
+ 1c2:	bf 90       	pop	r11
+ 1c4:	af 90       	pop	r10
+ 1c6:	08 95       	ret
+
+000001c8 <_ZN13LiquidCrystal10write8bitsEh>:
+
+void LiquidCrystal::write8bits(uint8_t value) {
+ 1c8:	af 92       	push	r10
+ 1ca:	bf 92       	push	r11
+ 1cc:	cf 92       	push	r12
+ 1ce:	df 92       	push	r13
+ 1d0:	ef 92       	push	r14
+ 1d2:	ff 92       	push	r15
+ 1d4:	0f 93       	push	r16
+ 1d6:	1f 93       	push	r17
+ 1d8:	cf 93       	push	r28
+ 1da:	df 93       	push	r29
+ 1dc:	5c 01       	movw	r10, r24
+ 1de:	8c 01       	movw	r16, r24
+ 1e0:	09 5f       	subi	r16, 0xF9	; 249
+ 1e2:	1f 4f       	sbci	r17, 0xFF	; 255
+  for (int i = 0; i < 8; i++) {
+ 1e4:	c0 e0       	ldi	r28, 0x00	; 0
+ 1e6:	d0 e0       	ldi	r29, 0x00	; 0
+    pinMode(_data_pins[i], OUTPUT);
+    digitalWrite(_data_pins[i], (value >> i) & 0x01);
+ 1e8:	c6 2e       	mov	r12, r22
+ 1ea:	d1 2c       	mov	r13, r1
+ 1ec:	78 01       	movw	r14, r16
+  pulseEnable();
+}
+
+void LiquidCrystal::write8bits(uint8_t value) {
+  for (int i = 0; i < 8; i++) {
+    pinMode(_data_pins[i], OUTPUT);
+ 1ee:	61 e0       	ldi	r22, 0x01	; 1
+ 1f0:	f8 01       	movw	r30, r16
+ 1f2:	81 91       	ld	r24, Z+
+ 1f4:	8f 01       	movw	r16, r30
+ 1f6:	0e 94 45 07 	call	0xe8a	; 0xe8a <pinMode>
+    digitalWrite(_data_pins[i], (value >> i) & 0x01);
+ 1fa:	b6 01       	movw	r22, r12
+ 1fc:	0c 2e       	mov	r0, r28
+ 1fe:	02 c0       	rjmp	.+4      	; 0x204 <_ZN13LiquidCrystal10write8bitsEh+0x3c>
+ 200:	75 95       	asr	r23
+ 202:	67 95       	ror	r22
+ 204:	0a 94       	dec	r0
+ 206:	e2 f7       	brpl	.-8      	; 0x200 <_ZN13LiquidCrystal10write8bitsEh+0x38>
+ 208:	61 70       	andi	r22, 0x01	; 1
+ 20a:	f7 01       	movw	r30, r14
+ 20c:	80 81       	ld	r24, Z
+ 20e:	0e 94 83 07 	call	0xf06	; 0xf06 <digitalWrite>
+
+  pulseEnable();
+}
+
+void LiquidCrystal::write8bits(uint8_t value) {
+  for (int i = 0; i < 8; i++) {
+ 212:	21 96       	adiw	r28, 0x01	; 1
+ 214:	c8 30       	cpi	r28, 0x08	; 8
+ 216:	d1 05       	cpc	r29, r1
+ 218:	49 f7       	brne	.-46     	; 0x1ec <_ZN13LiquidCrystal10write8bitsEh+0x24>
+    pinMode(_data_pins[i], OUTPUT);
+    digitalWrite(_data_pins[i], (value >> i) & 0x01);
+  }
+  
+  pulseEnable();
+ 21a:	c5 01       	movw	r24, r10
+ 21c:	0e 94 8f 00 	call	0x11e	; 0x11e <_ZN13LiquidCrystal11pulseEnableEv>
+}
+ 220:	df 91       	pop	r29
+ 222:	cf 91       	pop	r28
+ 224:	1f 91       	pop	r17
+ 226:	0f 91       	pop	r16
+ 228:	ff 90       	pop	r15
+ 22a:	ef 90       	pop	r14
+ 22c:	df 90       	pop	r13
+ 22e:	cf 90       	pop	r12
+ 230:	bf 90       	pop	r11
+ 232:	af 90       	pop	r10
+ 234:	08 95       	ret
+
+00000236 <_ZN13LiquidCrystal4sendEhh>:
+}
+
+/************ low level data pushing commands **********/
+
+// write either command or data, with automatic 4/8-bit selection
+void LiquidCrystal::send(uint8_t value, uint8_t mode) {
+ 236:	1f 93       	push	r17
+ 238:	cf 93       	push	r28
+ 23a:	df 93       	push	r29
+ 23c:	ec 01       	movw	r28, r24
+ 23e:	16 2f       	mov	r17, r22
+  digitalWrite(_rs_pin, mode);
+ 240:	64 2f       	mov	r22, r20
+ 242:	8c 81       	ldd	r24, Y+4	; 0x04
+ 244:	0e 94 83 07 	call	0xf06	; 0xf06 <digitalWrite>
+
+  // if there is a RW pin indicated, set it low to Write
+  if (_rw_pin != 255) { 
+ 248:	8d 81       	ldd	r24, Y+5	; 0x05
+ 24a:	8f 3f       	cpi	r24, 0xFF	; 255
+ 24c:	19 f0       	breq	.+6      	; 0x254 <_ZN13LiquidCrystal4sendEhh+0x1e>
+    digitalWrite(_rw_pin, LOW);
+ 24e:	60 e0       	ldi	r22, 0x00	; 0
+ 250:	0e 94 83 07 	call	0xf06	; 0xf06 <digitalWrite>
+  }
+  
+  if (_displayfunction & LCD_8BITMODE) {
+ 254:	8f 85       	ldd	r24, Y+15	; 0x0f
+ 256:	84 ff       	sbrs	r24, 4
+ 258:	05 c0       	rjmp	.+10     	; 0x264 <_ZN13LiquidCrystal4sendEhh+0x2e>
+    write8bits(value); 
+ 25a:	61 2f       	mov	r22, r17
+ 25c:	ce 01       	movw	r24, r28
+ 25e:	0e 94 e4 00 	call	0x1c8	; 0x1c8 <_ZN13LiquidCrystal10write8bitsEh>
+ 262:	12 c0       	rjmp	.+36     	; 0x288 <_ZN13LiquidCrystal4sendEhh+0x52>
+  } else {
+    write4bits(value>>4);
+ 264:	81 2f       	mov	r24, r17
+ 266:	90 e0       	ldi	r25, 0x00	; 0
+ 268:	bc 01       	movw	r22, r24
+ 26a:	75 95       	asr	r23
+ 26c:	67 95       	ror	r22
+ 26e:	75 95       	asr	r23
+ 270:	67 95       	ror	r22
+ 272:	75 95       	asr	r23
+ 274:	67 95       	ror	r22
+ 276:	75 95       	asr	r23
+ 278:	67 95       	ror	r22
+ 27a:	ce 01       	movw	r24, r28
+ 27c:	0e 94 ad 00 	call	0x15a	; 0x15a <_ZN13LiquidCrystal10write4bitsEh>
+    write4bits(value);
+ 280:	61 2f       	mov	r22, r17
+ 282:	ce 01       	movw	r24, r28
+ 284:	0e 94 ad 00 	call	0x15a	; 0x15a <_ZN13LiquidCrystal10write4bitsEh>
+  }
+}
+ 288:	df 91       	pop	r29
+ 28a:	cf 91       	pop	r28
+ 28c:	1f 91       	pop	r17
+ 28e:	08 95       	ret
+
+00000290 <_ZN13LiquidCrystal5clearEv>:
+}
+
+/*********** mid level commands, for sending data/cmds */
+
+inline void LiquidCrystal::command(uint8_t value) {
+  send(value, LOW);
+ 290:	40 e0       	ldi	r20, 0x00	; 0
+ 292:	61 e0       	ldi	r22, 0x01	; 1
+ 294:	0e 94 1b 01 	call	0x236	; 0x236 <_ZN13LiquidCrystal4sendEhh>
+
+/********** high level commands, for the user! */
+void LiquidCrystal::clear()
+{
+  command(LCD_CLEARDISPLAY);  // clear display, set cursor position to zero
+  delayMicroseconds(2000);  // this command takes a long time!
+ 298:	80 ed       	ldi	r24, 0xD0	; 208
+ 29a:	97 e0       	ldi	r25, 0x07	; 7
+ 29c:	0e 94 27 07 	call	0xe4e	; 0xe4e <delayMicroseconds>
+ 2a0:	08 95       	ret
+
+000002a2 <_ZN13LiquidCrystal9setCursorEhh>:
+  command(LCD_RETURNHOME);  // set cursor position to zero
+  delayMicroseconds(2000);  // this command takes a long time!
+}
+
+void LiquidCrystal::setCursor(uint8_t col, uint8_t row)
+{
+ 2a2:	44 30       	cpi	r20, 0x04	; 4
+ 2a4:	08 f0       	brcs	.+2      	; 0x2a8 <_ZN13LiquidCrystal9setCursorEhh+0x6>
+ 2a6:	43 e0       	ldi	r20, 0x03	; 3
+  const size_t max_lines = sizeof(_row_offsets) / sizeof(*_row_offsets);
+  if ( row >= max_lines ) {
+    row = max_lines - 1;    // we count rows starting w/0
+  }
+  if ( row >= _numlines ) {
+ 2a8:	fc 01       	movw	r30, r24
+ 2aa:	23 89       	ldd	r18, Z+19	; 0x13
+ 2ac:	42 17       	cp	r20, r18
+ 2ae:	10 f0       	brcs	.+4      	; 0x2b4 <_ZN13LiquidCrystal9setCursorEhh+0x12>
+    row = _numlines - 1;    // we count rows starting w/0
+ 2b0:	4f ef       	ldi	r20, 0xFF	; 255
+ 2b2:	42 0f       	add	r20, r18
+  }
+  
+  command(LCD_SETDDRAMADDR | (col + _row_offsets[row]));
+ 2b4:	fc 01       	movw	r30, r24
+ 2b6:	e4 0f       	add	r30, r20
+ 2b8:	f1 1d       	adc	r31, r1
+ 2ba:	24 89       	ldd	r18, Z+20	; 0x14
+ 2bc:	62 0f       	add	r22, r18
+ 2be:	60 68       	ori	r22, 0x80	; 128
+}
+
+/*********** mid level commands, for sending data/cmds */
+
+inline void LiquidCrystal::command(uint8_t value) {
+  send(value, LOW);
+ 2c0:	40 e0       	ldi	r20, 0x00	; 0
+ 2c2:	0e 94 1b 01 	call	0x236	; 0x236 <_ZN13LiquidCrystal4sendEhh>
+ 2c6:	08 95       	ret
+
+000002c8 <_ZN13LiquidCrystal7displayEv>:
+void LiquidCrystal::noDisplay() {
+  _displaycontrol &= ~LCD_DISPLAYON;
+  command(LCD_DISPLAYCONTROL | _displaycontrol);
+}
+void LiquidCrystal::display() {
+  _displaycontrol |= LCD_DISPLAYON;
+ 2c8:	fc 01       	movw	r30, r24
+ 2ca:	60 89       	ldd	r22, Z+16	; 0x10
+ 2cc:	26 2f       	mov	r18, r22
+ 2ce:	24 60       	ori	r18, 0x04	; 4
+ 2d0:	20 8b       	std	Z+16, r18	; 0x10
+  command(LCD_DISPLAYCONTROL | _displaycontrol);
+ 2d2:	6c 60       	ori	r22, 0x0C	; 12
+}
+
+/*********** mid level commands, for sending data/cmds */
+
+inline void LiquidCrystal::command(uint8_t value) {
+  send(value, LOW);
+ 2d4:	40 e0       	ldi	r20, 0x00	; 0
+ 2d6:	0e 94 1b 01 	call	0x236	; 0x236 <_ZN13LiquidCrystal4sendEhh>
+ 2da:	08 95       	ret
+
+000002dc <_ZN13LiquidCrystal5beginEhhh>:
+    _displayfunction = LCD_8BITMODE | LCD_1LINE | LCD_5x8DOTS;
+  
+  begin(16, 1);  
+}
+
+void LiquidCrystal::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
+ 2dc:	cf 93       	push	r28
+ 2de:	df 93       	push	r29
+ 2e0:	ec 01       	movw	r28, r24
+  if (lines > 1) {
+ 2e2:	42 30       	cpi	r20, 0x02	; 2
+ 2e4:	18 f0       	brcs	.+6      	; 0x2ec <_ZN13LiquidCrystal5beginEhhh+0x10>
+    _displayfunction |= LCD_2LINE;
+ 2e6:	8f 85       	ldd	r24, Y+15	; 0x0f
+ 2e8:	88 60       	ori	r24, 0x08	; 8
+ 2ea:	8f 87       	std	Y+15, r24	; 0x0f
+  }
+  _numlines = lines;
+ 2ec:	4b 8b       	std	Y+19, r20	; 0x13
+   or
+     setRowOffsets(0x00, 0x40, 0x10, 0x50)
+ */
+void LiquidCrystal::setRowOffsets(int row0, int row1, int row2, int row3)
+{
+  _row_offsets[0] = row0;
+ 2ee:	1c 8a       	std	Y+20, r1	; 0x14
+  _row_offsets[1] = row1;
+ 2f0:	80 e4       	ldi	r24, 0x40	; 64
+ 2f2:	8d 8b       	std	Y+21, r24	; 0x15
+  _row_offsets[2] = row2;
+ 2f4:	6e 8b       	std	Y+22, r22	; 0x16
+  if (lines > 1) {
+    _displayfunction |= LCD_2LINE;
+  }
+  _numlines = lines;
+
+  setRowOffsets(0x00, 0x40, 0x00 + cols, 0x40 + cols);  
+ 2f6:	70 e0       	ldi	r23, 0x00	; 0
+ 2f8:	60 5c       	subi	r22, 0xC0	; 192
+ 2fa:	7f 4f       	sbci	r23, 0xFF	; 255
+void LiquidCrystal::setRowOffsets(int row0, int row1, int row2, int row3)
+{
+  _row_offsets[0] = row0;
+  _row_offsets[1] = row1;
+  _row_offsets[2] = row2;
+  _row_offsets[3] = row3;
+ 2fc:	6f 8b       	std	Y+23, r22	; 0x17
+  _numlines = lines;
+
+  setRowOffsets(0x00, 0x40, 0x00 + cols, 0x40 + cols);  
+
+  // for some 1 line displays you can select a 10 pixel high font
+  if ((dotsize != LCD_5x8DOTS) && (lines == 1)) {
+ 2fe:	22 23       	and	r18, r18
+ 300:	29 f0       	breq	.+10     	; 0x30c <_ZN13LiquidCrystal5beginEhhh+0x30>
+ 302:	41 30       	cpi	r20, 0x01	; 1
+ 304:	19 f4       	brne	.+6      	; 0x30c <_ZN13LiquidCrystal5beginEhhh+0x30>
+    _displayfunction |= LCD_5x10DOTS;
+ 306:	8f 85       	ldd	r24, Y+15	; 0x0f
+ 308:	84 60       	ori	r24, 0x04	; 4
+ 30a:	8f 87       	std	Y+15, r24	; 0x0f
+  }
+
+  // SEE PAGE 45/46 FOR INITIALIZATION SPECIFICATION!
+  // according to datasheet, we need at least 40ms after power rises above 2.7V
+  // before sending commands. Arduino can turn on way before 4.5V so we'll wait 50
+  delayMicroseconds(50000); 
+ 30c:	80 e5       	ldi	r24, 0x50	; 80
+ 30e:	93 ec       	ldi	r25, 0xC3	; 195
+ 310:	0e 94 27 07 	call	0xe4e	; 0xe4e <delayMicroseconds>
+  // Now we pull both RS and R/W low to begin commands
+  digitalWrite(_rs_pin, LOW);
+ 314:	60 e0       	ldi	r22, 0x00	; 0
+ 316:	8c 81       	ldd	r24, Y+4	; 0x04
+ 318:	0e 94 83 07 	call	0xf06	; 0xf06 <digitalWrite>
+  digitalWrite(_enable_pin, LOW);
+ 31c:	60 e0       	ldi	r22, 0x00	; 0
+ 31e:	8e 81       	ldd	r24, Y+6	; 0x06
+ 320:	0e 94 83 07 	call	0xf06	; 0xf06 <digitalWrite>
+  if (_rw_pin != 255) { 
+ 324:	8d 81       	ldd	r24, Y+5	; 0x05
+ 326:	8f 3f       	cpi	r24, 0xFF	; 255
+ 328:	19 f0       	breq	.+6      	; 0x330 <_ZN13LiquidCrystal5beginEhhh+0x54>
+    digitalWrite(_rw_pin, LOW);
+ 32a:	60 e0       	ldi	r22, 0x00	; 0
+ 32c:	0e 94 83 07 	call	0xf06	; 0xf06 <digitalWrite>
+  }
+  
+  //put the LCD into 4 bit or 8 bit mode
+  if (! (_displayfunction & LCD_8BITMODE)) {
+ 330:	6f 85       	ldd	r22, Y+15	; 0x0f
+ 332:	64 fd       	sbrc	r22, 4
+ 334:	1d c0       	rjmp	.+58     	; 0x370 <_ZN13LiquidCrystal5beginEhhh+0x94>
+    // this is according to the hitachi HD44780 datasheet
+    // figure 24, pg 46
+
+    // we start in 8bit mode, try to set 4 bit mode
+    write4bits(0x03);
+ 336:	63 e0       	ldi	r22, 0x03	; 3
+ 338:	ce 01       	movw	r24, r28
+ 33a:	0e 94 ad 00 	call	0x15a	; 0x15a <_ZN13LiquidCrystal10write4bitsEh>
+    delayMicroseconds(4500); // wait min 4.1ms
+ 33e:	84 e9       	ldi	r24, 0x94	; 148
+ 340:	91 e1       	ldi	r25, 0x11	; 17
+ 342:	0e 94 27 07 	call	0xe4e	; 0xe4e <delayMicroseconds>
+
+    // second try
+    write4bits(0x03);
+ 346:	63 e0       	ldi	r22, 0x03	; 3
+ 348:	ce 01       	movw	r24, r28
+ 34a:	0e 94 ad 00 	call	0x15a	; 0x15a <_ZN13LiquidCrystal10write4bitsEh>
+    delayMicroseconds(4500); // wait min 4.1ms
+ 34e:	84 e9       	ldi	r24, 0x94	; 148
+ 350:	91 e1       	ldi	r25, 0x11	; 17
+ 352:	0e 94 27 07 	call	0xe4e	; 0xe4e <delayMicroseconds>
+    
+    // third go!
+    write4bits(0x03); 
+ 356:	63 e0       	ldi	r22, 0x03	; 3
+ 358:	ce 01       	movw	r24, r28
+ 35a:	0e 94 ad 00 	call	0x15a	; 0x15a <_ZN13LiquidCrystal10write4bitsEh>
+    delayMicroseconds(150);
+ 35e:	86 e9       	ldi	r24, 0x96	; 150
+ 360:	90 e0       	ldi	r25, 0x00	; 0
+ 362:	0e 94 27 07 	call	0xe4e	; 0xe4e <delayMicroseconds>
+
+    // finally, set to 4-bit interface
+    write4bits(0x02); 
+ 366:	62 e0       	ldi	r22, 0x02	; 2
+ 368:	ce 01       	movw	r24, r28
+ 36a:	0e 94 ad 00 	call	0x15a	; 0x15a <_ZN13LiquidCrystal10write4bitsEh>
+ 36e:	19 c0       	rjmp	.+50     	; 0x3a2 <_ZN13LiquidCrystal5beginEhhh+0xc6>
+  } else {
+    // this is according to the hitachi HD44780 datasheet
+    // page 45 figure 23
+
+    // Send function set command sequence
+    command(LCD_FUNCTIONSET | _displayfunction);
+ 370:	60 62       	ori	r22, 0x20	; 32
+}
+
+/*********** mid level commands, for sending data/cmds */
+
+inline void LiquidCrystal::command(uint8_t value) {
+  send(value, LOW);
+ 372:	40 e0       	ldi	r20, 0x00	; 0
+ 374:	ce 01       	movw	r24, r28
+ 376:	0e 94 1b 01 	call	0x236	; 0x236 <_ZN13LiquidCrystal4sendEhh>
+    // this is according to the hitachi HD44780 datasheet
+    // page 45 figure 23
+
+    // Send function set command sequence
+    command(LCD_FUNCTIONSET | _displayfunction);
+    delayMicroseconds(4500);  // wait more than 4.1ms
+ 37a:	84 e9       	ldi	r24, 0x94	; 148
+ 37c:	91 e1       	ldi	r25, 0x11	; 17
+ 37e:	0e 94 27 07 	call	0xe4e	; 0xe4e <delayMicroseconds>
+
+    // second try
+    command(LCD_FUNCTIONSET | _displayfunction);
+ 382:	6f 85       	ldd	r22, Y+15	; 0x0f
+ 384:	60 62       	ori	r22, 0x20	; 32
+}
+
+/*********** mid level commands, for sending data/cmds */
+
+inline void LiquidCrystal::command(uint8_t value) {
+  send(value, LOW);
+ 386:	40 e0       	ldi	r20, 0x00	; 0
+ 388:	ce 01       	movw	r24, r28
+ 38a:	0e 94 1b 01 	call	0x236	; 0x236 <_ZN13LiquidCrystal4sendEhh>
+    command(LCD_FUNCTIONSET | _displayfunction);
+    delayMicroseconds(4500);  // wait more than 4.1ms
+
+    // second try
+    command(LCD_FUNCTIONSET | _displayfunction);
+    delayMicroseconds(150);
+ 38e:	86 e9       	ldi	r24, 0x96	; 150
+ 390:	90 e0       	ldi	r25, 0x00	; 0
+ 392:	0e 94 27 07 	call	0xe4e	; 0xe4e <delayMicroseconds>
+
+    // third go
+    command(LCD_FUNCTIONSET | _displayfunction);
+ 396:	6f 85       	ldd	r22, Y+15	; 0x0f
+ 398:	60 62       	ori	r22, 0x20	; 32
+}
+
+/*********** mid level commands, for sending data/cmds */
+
+inline void LiquidCrystal::command(uint8_t value) {
+  send(value, LOW);
+ 39a:	40 e0       	ldi	r20, 0x00	; 0
+ 39c:	ce 01       	movw	r24, r28
+ 39e:	0e 94 1b 01 	call	0x236	; 0x236 <_ZN13LiquidCrystal4sendEhh>
+    // third go
+    command(LCD_FUNCTIONSET | _displayfunction);
+  }
+
+  // finally, set # lines, font size, etc.
+  command(LCD_FUNCTIONSET | _displayfunction);  
+ 3a2:	6f 85       	ldd	r22, Y+15	; 0x0f
+ 3a4:	60 62       	ori	r22, 0x20	; 32
+}
+
+/*********** mid level commands, for sending data/cmds */
+
+inline void LiquidCrystal::command(uint8_t value) {
+  send(value, LOW);
+ 3a6:	40 e0       	ldi	r20, 0x00	; 0
+ 3a8:	ce 01       	movw	r24, r28
+ 3aa:	0e 94 1b 01 	call	0x236	; 0x236 <_ZN13LiquidCrystal4sendEhh>
+
+  // finally, set # lines, font size, etc.
+  command(LCD_FUNCTIONSET | _displayfunction);  
+
+  // turn the display on with no cursor or blinking default
+  _displaycontrol = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;  
+ 3ae:	84 e0       	ldi	r24, 0x04	; 4
+ 3b0:	88 8b       	std	Y+16, r24	; 0x10
+  display();
+ 3b2:	ce 01       	movw	r24, r28
+ 3b4:	0e 94 64 01 	call	0x2c8	; 0x2c8 <_ZN13LiquidCrystal7displayEv>
+
+  // clear it off
+  clear();
+ 3b8:	ce 01       	movw	r24, r28
+ 3ba:	0e 94 48 01 	call	0x290	; 0x290 <_ZN13LiquidCrystal5clearEv>
+
+  // Initialize to default text direction (for romance languages)
+  _displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
+ 3be:	82 e0       	ldi	r24, 0x02	; 2
+ 3c0:	89 8b       	std	Y+17, r24	; 0x11
+}
+
+/*********** mid level commands, for sending data/cmds */
+
+inline void LiquidCrystal::command(uint8_t value) {
+  send(value, LOW);
+ 3c2:	40 e0       	ldi	r20, 0x00	; 0
+ 3c4:	66 e0       	ldi	r22, 0x06	; 6
+ 3c6:	ce 01       	movw	r24, r28
+ 3c8:	0e 94 1b 01 	call	0x236	; 0x236 <_ZN13LiquidCrystal4sendEhh>
+  // Initialize to default text direction (for romance languages)
+  _displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
+  // set the entry mode
+  command(LCD_ENTRYMODESET | _displaymode);
+
+}
+ 3cc:	df 91       	pop	r29
+ 3ce:	cf 91       	pop	r28
+ 3d0:	08 95       	ret
+
+000003d2 <_ZN13LiquidCrystal4initEhhhhhhhhhhhh>:
+}
+
+void LiquidCrystal::init(uint8_t fourbitmode, uint8_t rs, uint8_t rw, uint8_t enable,
+			 uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
+			 uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7)
+{
+ 3d2:	6f 92       	push	r6
+ 3d4:	7f 92       	push	r7
+ 3d6:	8f 92       	push	r8
+ 3d8:	af 92       	push	r10
+ 3da:	cf 92       	push	r12
+ 3dc:	ef 92       	push	r14
+ 3de:	0f 93       	push	r16
+ 3e0:	1f 93       	push	r17
+ 3e2:	cf 93       	push	r28
+ 3e4:	df 93       	push	r29
+ 3e6:	cd b7       	in	r28, 0x3d	; 61
+ 3e8:	de b7       	in	r29, 0x3e	; 62
+ 3ea:	3c 01       	movw	r6, r24
+ 3ec:	16 2f       	mov	r17, r22
+ 3ee:	84 2f       	mov	r24, r20
+  _rs_pin = rs;
+ 3f0:	f3 01       	movw	r30, r6
+ 3f2:	44 83       	std	Z+4, r20	; 0x04
+  _rw_pin = rw;
+ 3f4:	25 83       	std	Z+5, r18	; 0x05
+  _enable_pin = enable;
+ 3f6:	06 83       	std	Z+6, r16	; 0x06
+  
+  _data_pins[0] = d0;
+ 3f8:	e7 82       	std	Z+7, r14	; 0x07
+  _data_pins[1] = d1;
+ 3fa:	c0 86       	std	Z+8, r12	; 0x08
+  _data_pins[2] = d2;
+ 3fc:	a1 86       	std	Z+9, r10	; 0x09
+  _data_pins[3] = d3; 
+ 3fe:	82 86       	std	Z+10, r8	; 0x0a
+  _data_pins[4] = d4;
+ 400:	9d 85       	ldd	r25, Y+13	; 0x0d
+ 402:	93 87       	std	Z+11, r25	; 0x0b
+  _data_pins[5] = d5;
+ 404:	9e 85       	ldd	r25, Y+14	; 0x0e
+ 406:	94 87       	std	Z+12, r25	; 0x0c
+  _data_pins[6] = d6;
+ 408:	9f 85       	ldd	r25, Y+15	; 0x0f
+ 40a:	95 87       	std	Z+13, r25	; 0x0d
+  _data_pins[7] = d7; 
+ 40c:	98 89       	ldd	r25, Y+16	; 0x10
+ 40e:	96 87       	std	Z+14, r25	; 0x0e
+
+  pinMode(_rs_pin, OUTPUT);
+ 410:	61 e0       	ldi	r22, 0x01	; 1
+ 412:	0e 94 45 07 	call	0xe8a	; 0xe8a <pinMode>
+  // we can save 1 pin by not using RW. Indicate by passing 255 instead of pin#
+  if (_rw_pin != 255) { 
+ 416:	f3 01       	movw	r30, r6
+ 418:	85 81       	ldd	r24, Z+5	; 0x05
+ 41a:	8f 3f       	cpi	r24, 0xFF	; 255
+ 41c:	19 f0       	breq	.+6      	; 0x424 <_ZN13LiquidCrystal4initEhhhhhhhhhhhh+0x52>
+    pinMode(_rw_pin, OUTPUT);
+ 41e:	61 e0       	ldi	r22, 0x01	; 1
+ 420:	0e 94 45 07 	call	0xe8a	; 0xe8a <pinMode>
+  }
+  pinMode(_enable_pin, OUTPUT);
+ 424:	61 e0       	ldi	r22, 0x01	; 1
+ 426:	f3 01       	movw	r30, r6
+ 428:	86 81       	ldd	r24, Z+6	; 0x06
+ 42a:	0e 94 45 07 	call	0xe8a	; 0xe8a <pinMode>
+  
+  if (fourbitmode)
+ 42e:	11 23       	and	r17, r17
+ 430:	19 f0       	breq	.+6      	; 0x438 <_ZN13LiquidCrystal4initEhhhhhhhhhhhh+0x66>
+    _displayfunction = LCD_4BITMODE | LCD_1LINE | LCD_5x8DOTS;
+ 432:	f3 01       	movw	r30, r6
+ 434:	17 86       	std	Z+15, r1	; 0x0f
+ 436:	03 c0       	rjmp	.+6      	; 0x43e <_ZN13LiquidCrystal4initEhhhhhhhhhhhh+0x6c>
+  else 
+    _displayfunction = LCD_8BITMODE | LCD_1LINE | LCD_5x8DOTS;
+ 438:	80 e1       	ldi	r24, 0x10	; 16
+ 43a:	f3 01       	movw	r30, r6
+ 43c:	87 87       	std	Z+15, r24	; 0x0f
+  
+  begin(16, 1);  
+ 43e:	20 e0       	ldi	r18, 0x00	; 0
+ 440:	41 e0       	ldi	r20, 0x01	; 1
+ 442:	60 e1       	ldi	r22, 0x10	; 16
+ 444:	c3 01       	movw	r24, r6
+ 446:	0e 94 6e 01 	call	0x2dc	; 0x2dc <_ZN13LiquidCrystal5beginEhhh>
+}
+ 44a:	df 91       	pop	r29
+ 44c:	cf 91       	pop	r28
+ 44e:	1f 91       	pop	r17
+ 450:	0f 91       	pop	r16
+ 452:	ef 90       	pop	r14
+ 454:	cf 90       	pop	r12
+ 456:	af 90       	pop	r10
+ 458:	8f 90       	pop	r8
+ 45a:	7f 90       	pop	r7
+ 45c:	6f 90       	pop	r6
+ 45e:	08 95       	ret
+
+00000460 <_ZN13LiquidCrystalC1Ehhhhhhh>:
+			     uint8_t d4, uint8_t d5, uint8_t d6, uint8_t d7)
+{
+  init(0, rs, 255, enable, d0, d1, d2, d3, d4, d5, d6, d7);
+}
+
+LiquidCrystal::LiquidCrystal(uint8_t rs, uint8_t rw, uint8_t enable,
+ 460:	8f 92       	push	r8
+ 462:	af 92       	push	r10
+ 464:	cf 92       	push	r12
+ 466:	ef 92       	push	r14
+ 468:	0f 93       	push	r16
+    size_t printNumber(unsigned long, uint8_t);
+    size_t printFloat(double, uint8_t);
+  protected:
+    void setWriteError(int err = 1) { write_error = err; }
+  public:
+    Print() : write_error(0) {}
+ 46a:	dc 01       	movw	r26, r24
+ 46c:	13 96       	adiw	r26, 0x03	; 3
+ 46e:	1c 92       	st	X, r1
+ 470:	1e 92       	st	-X, r1
+ 472:	12 97       	sbiw	r26, 0x02	; 2
+			     uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3)
+ 474:	e7 e6       	ldi	r30, 0x67	; 103
+ 476:	f0 e0       	ldi	r31, 0x00	; 0
+ 478:	ed 93       	st	X+, r30
+ 47a:	fc 93       	st	X, r31
+{
+  init(1, rs, rw, enable, d0, d1, d2, d3, 0, 0, 0, 0);
+ 47c:	1f 92       	push	r1
+ 47e:	1f 92       	push	r1
+ 480:	1f 92       	push	r1
+ 482:	1f 92       	push	r1
+ 484:	8a 2c       	mov	r8, r10
+ 486:	ac 2c       	mov	r10, r12
+ 488:	ce 2c       	mov	r12, r14
+ 48a:	e0 2e       	mov	r14, r16
+ 48c:	02 2f       	mov	r16, r18
+ 48e:	24 2f       	mov	r18, r20
+ 490:	46 2f       	mov	r20, r22
+ 492:	61 e0       	ldi	r22, 0x01	; 1
+ 494:	0e 94 e9 01 	call	0x3d2	; 0x3d2 <_ZN13LiquidCrystal4initEhhhhhhhhhhhh>
+ 498:	0f 90       	pop	r0
+ 49a:	0f 90       	pop	r0
+ 49c:	0f 90       	pop	r0
+ 49e:	0f 90       	pop	r0
+}
+ 4a0:	0f 91       	pop	r16
+ 4a2:	ef 90       	pop	r14
+ 4a4:	cf 90       	pop	r12
+ 4a6:	af 90       	pop	r10
+ 4a8:	8f 90       	pop	r8
+ 4aa:	08 95       	ret
+
+000004ac <_ZN13LiquidCrystal5writeEh>:
+inline void LiquidCrystal::command(uint8_t value) {
+  send(value, LOW);
+}
+
+inline size_t LiquidCrystal::write(uint8_t value) {
+  send(value, HIGH);
+ 4ac:	41 e0       	ldi	r20, 0x01	; 1
+ 4ae:	0e 94 1b 01 	call	0x236	; 0x236 <_ZN13LiquidCrystal4sendEhh>
+  return 1; // assume sucess
+}
+ 4b2:	81 e0       	ldi	r24, 0x01	; 1
+ 4b4:	90 e0       	ldi	r25, 0x00	; 0
+ 4b6:	08 95       	ret
+
+000004b8 <_Z4homev>:
+}
+
+
+void home()
+{
+	PORTC=0;
+ 4b8:	15 ba       	out	0x15, r1	; 21
+	cup=LEFT;
+ 4ba:	10 92 1e 01 	sts	0x011E, r1
+ 4be:	08 95       	ret
+
+000004c0 <_Z18cup_presence_checkv>:
+
+}
+
+bool cup_presence_check()
+{
+	if(cup)
+ 4c0:	80 91 1e 01 	lds	r24, 0x011E
+ 4c4:	88 23       	and	r24, r24
+ 4c6:	39 f0       	breq	.+14     	; 0x4d6 <_Z18cup_presence_checkv+0x16>
+	{
+		if(!(PINB&PRESENCE_SENSOR_R))
+ 4c8:	86 b3       	in	r24, 0x16	; 22
+ 4ca:	82 fb       	bst	r24, 2
+ 4cc:	88 27       	eor	r24, r24
+ 4ce:	80 f9       	bld	r24, 0
+ 4d0:	91 e0       	ldi	r25, 0x01	; 1
+ 4d2:	89 27       	eor	r24, r25
+ 4d4:	08 95       	ret
+		else return false;
+	}
+	
+	else
+	{
+		if(!(PIND&PRESENCE_SENSOR_L))
+ 4d6:	80 b3       	in	r24, 0x10	; 16
+ 4d8:	83 fb       	bst	r24, 3
+ 4da:	88 27       	eor	r24, r24
+ 4dc:	80 f9       	bld	r24, 0
+ 4de:	91 e0       	ldi	r25, 0x01	; 1
+ 4e0:	89 27       	eor	r24, r25
+		return true;
+		
+		else return false;
+	}
+}
+ 4e2:	08 95       	ret
+
+000004e4 <_Z18cup_position_checkv>:
+
+bool cup_position_check()
+{
+	if(cup)
+ 4e4:	80 91 1e 01 	lds	r24, 0x011E
+ 4e8:	88 23       	and	r24, r24
+ 4ea:	39 f0       	breq	.+14     	; 0x4fa <_Z18cup_position_checkv+0x16>
+	{
+		if(!(PINA&CUP_CHANGE_SENSOR_R))
+ 4ec:	89 b3       	in	r24, 0x19	; 25
+ 4ee:	83 fb       	bst	r24, 3
+ 4f0:	88 27       	eor	r24, r24
+ 4f2:	80 f9       	bld	r24, 0
+ 4f4:	91 e0       	ldi	r25, 0x01	; 1
+ 4f6:	89 27       	eor	r24, r25
+ 4f8:	08 95       	ret
+		else return false;
+	}
+	
+	else 
+	{
+		if(!(PINA&CUP_CHANGE_SENSOR_L))
+ 4fa:	89 b3       	in	r24, 0x19	; 25
+ 4fc:	82 95       	swap	r24
+ 4fe:	81 70       	andi	r24, 0x01	; 1
+ 500:	91 e0       	ldi	r25, 0x01	; 1
+ 502:	89 27       	eor	r24, r25
+		return true;
+		
+		else return false;
+	}
+}
+ 504:	08 95       	ret
+
+00000506 <_Z13conveyor_stopv>:
+}
+
+
+void conveyor_stop()
+{
+	if((PINA&SHUTTER_SENSOR_L)&&(PINA&SHUTTER_SENSOR_R))
+ 506:	ca 9b       	sbis	0x19, 2	; 25
+ 508:	06 c0       	rjmp	.+12     	; 0x516 <_Z13conveyor_stopv+0x10>
+ 50a:	c9 99       	sbic	0x19, 1	; 25
+ 50c:	07 c0       	rjmp	.+14     	; 0x51c <_Z13conveyor_stopv+0x16>
+ 50e:	03 c0       	rjmp	.+6      	; 0x516 <_Z13conveyor_stopv+0x10>
+	PORTC&=~(CONVEYOR|CONVEYOR_LED);
+	
+	else if(!(PINA&WEIGHT_SENSOR_L)&&(!(PINA&WEIGHT_SENSOR_R)))
+ 510:	cd 9b       	sbis	0x19, 5	; 25
+ 512:	08 c0       	rjmp	.+16     	; 0x524 <_Z13conveyor_stopv+0x1e>
+ 514:	0b c0       	rjmp	.+22     	; 0x52c <_Z13conveyor_stopv+0x26>
+ 516:	ce 9b       	sbis	0x19, 6	; 25
+ 518:	fb cf       	rjmp	.-10     	; 0x510 <_Z13conveyor_stopv+0xa>
+ 51a:	08 c0       	rjmp	.+16     	; 0x52c <_Z13conveyor_stopv+0x26>
+
+
+void conveyor_stop()
+{
+	if((PINA&SHUTTER_SENSOR_L)&&(PINA&SHUTTER_SENSOR_R))
+	PORTC&=~(CONVEYOR|CONVEYOR_LED);
+ 51c:	85 b3       	in	r24, 0x15	; 21
+ 51e:	8f 7a       	andi	r24, 0xAF	; 175
+ 520:	85 bb       	out	0x15, r24	; 21
+ 522:	08 95       	ret
+	
+	else if(!(PINA&WEIGHT_SENSOR_L)&&(!(PINA&WEIGHT_SENSOR_R)))
+	     PORTC&=~(CONVEYOR|CONVEYOR_LED);
+ 524:	85 b3       	in	r24, 0x15	; 21
+ 526:	8f 7a       	andi	r24, 0xAF	; 175
+ 528:	85 bb       	out	0x15, r24	; 21
+ 52a:	08 95       	ret
+    
+	else PORTC|=(CONVEYOR|CONVEYOR_LED);
+ 52c:	85 b3       	in	r24, 0x15	; 21
+ 52e:	80 65       	ori	r24, 0x50	; 80
+ 530:	85 bb       	out	0x15, r24	; 21
+ 532:	08 95       	ret
+
+00000534 <_Z9var_resetv>:
+}
+
+void var_reset()
+{
+	cup=false;
+ 534:	10 92 1e 01 	sts	0x011E, r1
+	new_cup_flag_l=true;
+ 538:	81 e0       	ldi	r24, 0x01	; 1
+ 53a:	80 93 62 00 	sts	0x0062, r24
+	new_cup_flag_r=true;
+ 53e:	80 93 61 00 	sts	0x0061, r24
+	start_stop_status=false;
+ 542:	10 92 1d 01 	sts	0x011D, r1
+	wait_check=false;
+ 546:	10 92 1c 01 	sts	0x011C, r1
+ 54a:	08 95       	ret
+
+0000054c <_Z13check_new_cupv>:
+void check_new_cup()
+{
+	static bool cup_missing_l=false;
+	static bool cup_missing_r=false;
+	
+	if(!cup_presence_check())
+ 54c:	0e 94 60 02 	call	0x4c0	; 0x4c0 <_Z18cup_presence_checkv>
+ 550:	81 11       	cpse	r24, r1
+ 552:	0c c0       	rjmp	.+24     	; 0x56c <_Z13check_new_cupv+0x20>
+	{
+		if(cup)
+ 554:	80 91 1e 01 	lds	r24, 0x011E
+ 558:	88 23       	and	r24, r24
+ 55a:	21 f0       	breq	.+8      	; 0x564 <_Z13check_new_cupv+0x18>
+		cup_missing_r=true;
+ 55c:	81 e0       	ldi	r24, 0x01	; 1
+ 55e:	80 93 01 01 	sts	0x0101, r24
+ 562:	08 95       	ret
+		else
+		cup_missing_l=true;
+ 564:	81 e0       	ldi	r24, 0x01	; 1
+ 566:	80 93 00 01 	sts	0x0100, r24
+ 56a:	08 95       	ret
+	}
+	
+	else
+	{
+		if(cup)
+ 56c:	80 91 1e 01 	lds	r24, 0x011E
+ 570:	88 23       	and	r24, r24
+ 572:	51 f0       	breq	.+20     	; 0x588 <_Z13check_new_cupv+0x3c>
+		{
+			if(cup_missing_r)
+ 574:	80 91 01 01 	lds	r24, 0x0101
+ 578:	88 23       	and	r24, r24
+ 57a:	19 f0       	breq	.+6      	; 0x582 <_Z13check_new_cupv+0x36>
+			new_cup_flag_r=true;
+ 57c:	81 e0       	ldi	r24, 0x01	; 1
+ 57e:	80 93 61 00 	sts	0x0061, r24
+			
+			cup_missing_r=false;
+ 582:	10 92 01 01 	sts	0x0101, r1
+ 586:	08 95       	ret
+		}
+		
+		else
+		{
+			
+			if(cup_missing_l)
+ 588:	80 91 00 01 	lds	r24, 0x0100
+ 58c:	88 23       	and	r24, r24
+ 58e:	19 f0       	breq	.+6      	; 0x596 <_Z13check_new_cupv+0x4a>
+			new_cup_flag_l=true;
+ 590:	81 e0       	ldi	r24, 0x01	; 1
+ 592:	80 93 62 00 	sts	0x0062, r24
+			cup_missing_l=false;
+ 596:	10 92 00 01 	sts	0x0100, r1
+ 59a:	08 95       	ret
+
+0000059c <_Z10stop_checkv>:
+	
+}
+
+void stop_check()
+{
+	if(!(PIND&STOP_BUTTON))
+ 59c:	82 9b       	sbis	0x10, 2	; 16
+	halt();
+ 59e:	0e 94 cf 04 	call	0x99e	; 0x99e <_Z4haltv>
+ 5a2:	08 95       	ret
+
+000005a4 <_Z3runv>:
+	
+}
+
+
+void run()
+{
+ 5a4:	cf 93       	push	r28
+	manual_check();
+ 5a6:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+	
+	
+	if((PINA&WEIGHT_SENSOR_L)&&(!(PINA&SHUTTER_SENSOR_L)))
+ 5aa:	ce 9b       	sbis	0x19, 6	; 25
+ 5ac:	ea c0       	rjmp	.+468    	; 0x782 <_Z3runv+0x1de>
+ 5ae:	ca 9b       	sbis	0x19, 2	; 25
+ 5b0:	eb c0       	rjmp	.+470    	; 0x788 <_Z3runv+0x1e4>
+ 5b2:	e7 c0       	rjmp	.+462    	; 0x782 <_Z3runv+0x1de>
+		
+		
+		while(PINA&WEIGHT_SENSOR_L)
+		{   
+		  
+			manual_check();
+ 5b4:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+			conveyor_stop();
+ 5b8:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+			cup=!cup;
+ 5bc:	80 91 1e 01 	lds	r24, 0x011E
+ 5c0:	8c 27       	eor	r24, r28
+ 5c2:	80 93 1e 01 	sts	0x011E, r24
+			check_new_cup();
+ 5c6:	0e 94 a6 02 	call	0x54c	; 0x54c <_Z13check_new_cupv>
+			cup=!cup;
+ 5ca:	80 91 1e 01 	lds	r24, 0x011E
+ 5ce:	8c 27       	eor	r24, r28
+ 5d0:	80 93 1e 01 	sts	0x011E, r24
+			stop_check();
+ 5d4:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+		PORTC&=~FLAP;
+		PORTC|=(CONVEYOR|CONVEYOR_LED);
+		
+		
+		
+		while(PINA&WEIGHT_SENSOR_L)
+ 5d8:	ce 99       	sbic	0x19, 6	; 25
+ 5da:	ec cf       	rjmp	.-40     	; 0x5b4 <_Z3runv+0x10>
+ 5dc:	3d c0       	rjmp	.+122    	; 0x658 <_Z3runv+0xb4>
+		}
+	}
+	
+	else if(PINA&SHUTTER_SENSOR_L)
+	{   
+		lcd.setCursor(0,1);
+ 5de:	41 e0       	ldi	r20, 0x01	; 1
+ 5e0:	60 e0       	ldi	r22, 0x00	; 0
+ 5e2:	83 e0       	ldi	r24, 0x03	; 3
+ 5e4:	91 e0       	ldi	r25, 0x01	; 1
+ 5e6:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+		lcd.print("                ");
+ 5ea:	6b e6       	ldi	r22, 0x6B	; 107
+ 5ec:	70 e0       	ldi	r23, 0x00	; 0
+ 5ee:	83 e0       	ldi	r24, 0x03	; 3
+ 5f0:	91 e0       	ldi	r25, 0x01	; 1
+ 5f2:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+		lcd.setCursor(1,1);
+ 5f6:	41 e0       	ldi	r20, 0x01	; 1
+ 5f8:	61 e0       	ldi	r22, 0x01	; 1
+ 5fa:	83 e0       	ldi	r24, 0x03	; 3
+ 5fc:	91 e0       	ldi	r25, 0x01	; 1
+ 5fe:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+		lcd.print("L Shutter Open");
+ 602:	6c e7       	ldi	r22, 0x7C	; 124
+ 604:	70 e0       	ldi	r23, 0x00	; 0
+ 606:	83 e0       	ldi	r24, 0x03	; 3
+ 608:	91 e0       	ldi	r25, 0x01	; 1
+ 60a:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+		
+		while(PINA&SHUTTER_SENSOR_L);
+ 60e:	ca 99       	sbic	0x19, 2	; 25
+ 610:	fe cf       	rjmp	.-4      	; 0x60e <_Z3runv+0x6a>
+		lcd.setCursor(0,1);
+ 612:	41 e0       	ldi	r20, 0x01	; 1
+ 614:	60 e0       	ldi	r22, 0x00	; 0
+ 616:	83 e0       	ldi	r24, 0x03	; 3
+ 618:	91 e0       	ldi	r25, 0x01	; 1
+ 61a:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+		lcd.print("                ");
+ 61e:	6b e6       	ldi	r22, 0x6B	; 107
+ 620:	70 e0       	ldi	r23, 0x00	; 0
+ 622:	83 e0       	ldi	r24, 0x03	; 3
+ 624:	91 e0       	ldi	r25, 0x01	; 1
+ 626:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+		
+		
+			while(PINA&WEIGHT_SENSOR_L)
+ 62a:	ce 9b       	sbis	0x19, 6	; 25
+ 62c:	15 c0       	rjmp	.+42     	; 0x658 <_Z3runv+0xb4>
+			{
+				
+				manual_check();
+				conveyor_stop();
+				cup=!cup;
+ 62e:	c1 e0       	ldi	r28, 0x01	; 1
+		
+		
+			while(PINA&WEIGHT_SENSOR_L)
+			{
+				
+				manual_check();
+ 630:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+				conveyor_stop();
+ 634:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+				cup=!cup;
+ 638:	80 91 1e 01 	lds	r24, 0x011E
+ 63c:	8c 27       	eor	r24, r28
+ 63e:	80 93 1e 01 	sts	0x011E, r24
+				check_new_cup();
+ 642:	0e 94 a6 02 	call	0x54c	; 0x54c <_Z13check_new_cupv>
+				cup=!cup;
+ 646:	80 91 1e 01 	lds	r24, 0x011E
+ 64a:	8c 27       	eor	r24, r28
+ 64c:	80 93 1e 01 	sts	0x011E, r24
+				stop_check();
+ 650:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+		while(PINA&SHUTTER_SENSOR_L);
+		lcd.setCursor(0,1);
+		lcd.print("                ");
+		
+		
+			while(PINA&WEIGHT_SENSOR_L)
+ 654:	ce 99       	sbic	0x19, 6	; 25
+ 656:	ec cf       	rjmp	.-40     	; 0x630 <_Z3runv+0x8c>
+				stop_check();
+			}
+		
+	}
+	
+	if((PINA&WEIGHT_SENSOR_R)&&!(PINA&SHUTTER_SENSOR_R))
+ 658:	cd 9b       	sbis	0x19, 5	; 25
+ 65a:	02 c0       	rjmp	.+4      	; 0x660 <_Z3runv+0xbc>
+ 65c:	c9 9b       	sbis	0x19, 1	; 25
+ 65e:	9c c0       	rjmp	.+312    	; 0x798 <_Z3runv+0x1f4>
+	 
+	 while(!cup_presence_check())
+	 {
+		 manual_check();
+		 conveyor_stop();
+		 cup=!cup;
+ 660:	c1 e0       	ldi	r28, 0x01	; 1
+ 662:	12 c0       	rjmp	.+36     	; 0x688 <_Z3runv+0xe4>
+	 
+	 PORTC|=(FLAP|CONVEYOR|CONVEYOR_LED);
+	 
+	 while(!cup_presence_check())
+	 {
+		 manual_check();
+ 664:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+		 conveyor_stop();
+ 668:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+		 cup=!cup;
+ 66c:	80 91 1e 01 	lds	r24, 0x011E
+ 670:	8c 27       	eor	r24, r28
+ 672:	80 93 1e 01 	sts	0x011E, r24
+		 check_new_cup();
+ 676:	0e 94 a6 02 	call	0x54c	; 0x54c <_Z13check_new_cupv>
+		 cup=!cup;
+ 67a:	80 91 1e 01 	lds	r24, 0x011E
+ 67e:	8c 27       	eor	r24, r28
+ 680:	80 93 1e 01 	sts	0x011E, r24
+		 stop_check();
+ 684:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+	
+	if((PINA&WEIGHT_SENSOR_R)&&!(PINA&SHUTTER_SENSOR_R))
+	 
+	 PORTC|=(FLAP|CONVEYOR|CONVEYOR_LED);
+	 
+	 while(!cup_presence_check())
+ 688:	0e 94 60 02 	call	0x4c0	; 0x4c0 <_Z18cup_presence_checkv>
+ 68c:	88 23       	and	r24, r24
+ 68e:	51 f3       	breq	.-44     	; 0x664 <_Z3runv+0xc0>
+ 690:	04 c0       	rjmp	.+8      	; 0x69a <_Z3runv+0xf6>
+		 stop_check();
+	 }
+	 
+	 while(!cup_position_check())
+	 {
+		 manual_check();
+ 692:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+		 conveyor_stop();
+ 696:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+		 check_new_cup();
+		 cup=!cup;
+		 stop_check();
+	 }
+	 
+	 while(!cup_position_check())
+ 69a:	0e 94 72 02 	call	0x4e4	; 0x4e4 <_Z18cup_position_checkv>
+ 69e:	88 23       	and	r24, r24
+ 6a0:	c1 f3       	breq	.-16     	; 0x692 <_Z3runv+0xee>
+	 {
+		 manual_check();
+		 conveyor_stop();
+	 }
+	 
+	 shutter_open();
+ 6a2:	0e 94 13 05 	call	0xa26	; 0xa26 <_Z12shutter_openv>
+	 cup=RIGHT;
+ 6a6:	81 e0       	ldi	r24, 0x01	; 1
+ 6a8:	80 93 1e 01 	sts	0x011E, r24
+	 
+	 //starting of right cup
+	 if(PINA&SHUTTER_SENSOR_R)
+ 6ac:	c9 9b       	sbis	0x19, 1	; 25
+ 6ae:	18 c0       	rjmp	.+48     	; 0x6e0 <_Z3runv+0x13c>
+	 {
+		 lcd.setCursor(0,1);
+ 6b0:	41 e0       	ldi	r20, 0x01	; 1
+ 6b2:	60 e0       	ldi	r22, 0x00	; 0
+ 6b4:	83 e0       	ldi	r24, 0x03	; 3
+ 6b6:	91 e0       	ldi	r25, 0x01	; 1
+ 6b8:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+		 lcd.print("                ");
+ 6bc:	6b e6       	ldi	r22, 0x6B	; 107
+ 6be:	70 e0       	ldi	r23, 0x00	; 0
+ 6c0:	83 e0       	ldi	r24, 0x03	; 3
+ 6c2:	91 e0       	ldi	r25, 0x01	; 1
+ 6c4:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+		 lcd.setCursor(1,1);
+ 6c8:	41 e0       	ldi	r20, 0x01	; 1
+ 6ca:	61 e0       	ldi	r22, 0x01	; 1
+ 6cc:	83 e0       	ldi	r24, 0x03	; 3
+ 6ce:	91 e0       	ldi	r25, 0x01	; 1
+ 6d0:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+		 lcd.print("R Shutter Open");
+ 6d4:	6b e8       	ldi	r22, 0x8B	; 139
+ 6d6:	70 e0       	ldi	r23, 0x00	; 0
+ 6d8:	83 e0       	ldi	r24, 0x03	; 3
+ 6da:	91 e0       	ldi	r25, 0x01	; 1
+ 6dc:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+	 }
+	 while(PINA&SHUTTER_SENSOR_R);
+ 6e0:	c9 99       	sbic	0x19, 1	; 25
+ 6e2:	fe cf       	rjmp	.-4      	; 0x6e0 <_Z3runv+0x13c>
+	 
+	 while(PINA&WEIGHT_SENSOR_R)
+ 6e4:	cd 9b       	sbis	0x19, 5	; 25
+ 6e6:	17 c0       	rjmp	.+46     	; 0x716 <_Z3runv+0x172>
+	 {
+		 manual_check();
+		 cup=RIGHT;
+ 6e8:	c1 e0       	ldi	r28, 0x01	; 1
+	 }
+	 while(PINA&SHUTTER_SENSOR_R);
+	 
+	 while(PINA&WEIGHT_SENSOR_R)
+	 {
+		 manual_check();
+ 6ea:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+		 cup=RIGHT;
+ 6ee:	c0 93 1e 01 	sts	0x011E, r28
+		 conveyor_stop();
+ 6f2:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+		 cup=!cup;
+ 6f6:	80 91 1e 01 	lds	r24, 0x011E
+ 6fa:	8c 27       	eor	r24, r28
+ 6fc:	80 93 1e 01 	sts	0x011E, r24
+		 check_new_cup();
+ 700:	0e 94 a6 02 	call	0x54c	; 0x54c <_Z13check_new_cupv>
+		 cup=!cup;
+ 704:	80 91 1e 01 	lds	r24, 0x011E
+ 708:	8c 27       	eor	r24, r28
+ 70a:	80 93 1e 01 	sts	0x011E, r24
+		 stop_check();
+ 70e:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+		 lcd.setCursor(1,1);
+		 lcd.print("R Shutter Open");
+	 }
+	 while(PINA&SHUTTER_SENSOR_R);
+	 
+	 while(PINA&WEIGHT_SENSOR_R)
+ 712:	cd 99       	sbic	0x19, 5	; 25
+ 714:	ea cf       	rjmp	.-44     	; 0x6ea <_Z3runv+0x146>
+		 check_new_cup();
+		 cup=!cup;
+		 stop_check();
+	 }
+	 
+	 PORTC&=~FLAP;
+ 716:	a8 98       	cbi	0x15, 0	; 21
+	 
+	 while(!cup_presence_check())
+	 {
+		 manual_check();
+		 conveyor_stop();
+		 cup=!cup;
+ 718:	c1 e0       	ldi	r28, 0x01	; 1
+		 stop_check();
+	 }
+	 
+	 PORTC&=~FLAP;
+	 
+	 while(!cup_presence_check())
+ 71a:	12 c0       	rjmp	.+36     	; 0x740 <_Z3runv+0x19c>
+	 {
+		 manual_check();
+ 71c:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+		 conveyor_stop();
+ 720:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+		 cup=!cup;
+ 724:	80 91 1e 01 	lds	r24, 0x011E
+ 728:	8c 27       	eor	r24, r28
+ 72a:	80 93 1e 01 	sts	0x011E, r24
+		 check_new_cup();
+ 72e:	0e 94 a6 02 	call	0x54c	; 0x54c <_Z13check_new_cupv>
+		 cup=!cup;
+ 732:	80 91 1e 01 	lds	r24, 0x011E
+ 736:	8c 27       	eor	r24, r28
+ 738:	80 93 1e 01 	sts	0x011E, r24
+		 stop_check();
+ 73c:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+		 stop_check();
+	 }
+	 
+	 PORTC&=~FLAP;
+	 
+	 while(!cup_presence_check())
+ 740:	0e 94 60 02 	call	0x4c0	; 0x4c0 <_Z18cup_presence_checkv>
+ 744:	88 23       	and	r24, r24
+ 746:	51 f3       	breq	.-44     	; 0x71c <_Z3runv+0x178>
+	 
+	 while(!cup_position_check())
+	 {
+		 manual_check();
+		 conveyor_stop();
+		 cup=!cup;
+ 748:	c1 e0       	ldi	r28, 0x01	; 1
+ 74a:	12 c0       	rjmp	.+36     	; 0x770 <_Z3runv+0x1cc>
+		 stop_check();
+	 }
+	 
+	 while(!cup_position_check())
+	 {
+		 manual_check();
+ 74c:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+		 conveyor_stop();
+ 750:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+		 cup=!cup;
+ 754:	80 91 1e 01 	lds	r24, 0x011E
+ 758:	8c 27       	eor	r24, r28
+ 75a:	80 93 1e 01 	sts	0x011E, r24
+		 check_new_cup();
+ 75e:	0e 94 a6 02 	call	0x54c	; 0x54c <_Z13check_new_cupv>
+		 cup=!cup;
+ 762:	80 91 1e 01 	lds	r24, 0x011E
+ 766:	8c 27       	eor	r24, r28
+ 768:	80 93 1e 01 	sts	0x011E, r24
+		 stop_check();
+ 76c:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+		 check_new_cup();
+		 cup=!cup;
+		 stop_check();
+	 }
+	 
+	 while(!cup_position_check())
+ 770:	0e 94 72 02 	call	0x4e4	; 0x4e4 <_Z18cup_position_checkv>
+ 774:	88 23       	and	r24, r24
+ 776:	51 f3       	breq	.-44     	; 0x74c <_Z3runv+0x1a8>
+		 check_new_cup();
+		 cup=!cup;
+		 stop_check();
+	 }
+	 
+	 shutter_open();
+ 778:	0e 94 13 05 	call	0xa26	; 0xa26 <_Z12shutter_openv>
+	 cup=LEFT;
+ 77c:	10 92 1e 01 	sts	0x011E, r1
+ 780:	0f c0       	rjmp	.+30     	; 0x7a0 <_Z3runv+0x1fc>
+			cup=!cup;
+			stop_check();
+		}
+	}
+	
+	else if(PINA&SHUTTER_SENSOR_L)
+ 782:	ca 9b       	sbis	0x19, 2	; 25
+ 784:	69 cf       	rjmp	.-302    	; 0x658 <_Z3runv+0xb4>
+ 786:	2b cf       	rjmp	.-426    	; 0x5de <_Z3runv+0x3a>
+	manual_check();
+	
+	
+	if((PINA&WEIGHT_SENSOR_L)&&(!(PINA&SHUTTER_SENSOR_L)))
+	{
+		PORTC&=~FLAP;
+ 788:	a8 98       	cbi	0x15, 0	; 21
+		PORTC|=(CONVEYOR|CONVEYOR_LED);
+ 78a:	85 b3       	in	r24, 0x15	; 21
+ 78c:	80 65       	ori	r24, 0x50	; 80
+ 78e:	85 bb       	out	0x15, r24	; 21
+		
+		
+		
+		while(PINA&WEIGHT_SENSOR_L)
+ 790:	ce 9b       	sbis	0x19, 6	; 25
+ 792:	62 cf       	rjmp	.-316    	; 0x658 <_Z3runv+0xb4>
+		{   
+		  
+			manual_check();
+			conveyor_stop();
+			cup=!cup;
+ 794:	c1 e0       	ldi	r28, 0x01	; 1
+ 796:	0e cf       	rjmp	.-484    	; 0x5b4 <_Z3runv+0x10>
+		
+	}
+	
+	if((PINA&WEIGHT_SENSOR_R)&&!(PINA&SHUTTER_SENSOR_R))
+	 
+	 PORTC|=(FLAP|CONVEYOR|CONVEYOR_LED);
+ 798:	85 b3       	in	r24, 0x15	; 21
+ 79a:	81 65       	ori	r24, 0x51	; 81
+ 79c:	85 bb       	out	0x15, r24	; 21
+ 79e:	60 cf       	rjmp	.-320    	; 0x660 <_Z3runv+0xbc>
+	 }
+	 
+	 shutter_open();
+	 cup=LEFT;
+	
+}
+ 7a0:	cf 91       	pop	r28
+ 7a2:	08 95       	ret
+
+000007a4 <_Z12manual_checkv>:
+void manual_check()
+{
+	static bool hi= true;
+	
+	MANUAL:
+	if(!(PINB&AUTO_MANUAL))
+ 7a4:	b0 99       	sbic	0x16, 0	; 22
+ 7a6:	69 c0       	rjmp	.+210    	; 0x87a <_Z12manual_checkv+0xd6>
+	{
+		hi=false;
+ 7a8:	10 92 60 00 	sts	0x0060, r1
+		start_stop_status=false;
+ 7ac:	10 92 1d 01 	sts	0x011D, r1
+		var_reset();
+ 7b0:	0e 94 9a 02 	call	0x534	; 0x534 <_Z9var_resetv>
+		home();
+ 7b4:	0e 94 5c 02 	call	0x4b8	; 0x4b8 <_Z4homev>
+		PORTC|=MANUAL_OUT;
+ 7b8:	af 9a       	sbi	0x15, 7	; 21
+		
+		if(!hi)
+ 7ba:	80 91 60 00 	lds	r24, 0x0060
+ 7be:	81 11       	cpse	r24, r1
+ 7c0:	13 c0       	rjmp	.+38     	; 0x7e8 <_Z12manual_checkv+0x44>
+		{
+			lcd.clear();
+ 7c2:	83 e0       	ldi	r24, 0x03	; 3
+ 7c4:	91 e0       	ldi	r25, 0x01	; 1
+ 7c6:	0e 94 48 01 	call	0x290	; 0x290 <_ZN13LiquidCrystal5clearEv>
+			lcd.setCursor(1,0);
+ 7ca:	40 e0       	ldi	r20, 0x00	; 0
+ 7cc:	61 e0       	ldi	r22, 0x01	; 1
+ 7ce:	83 e0       	ldi	r24, 0x03	; 3
+ 7d0:	91 e0       	ldi	r25, 0x01	; 1
+ 7d2:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+			lcd.print("Manual mode ON");
+ 7d6:	6a e9       	ldi	r22, 0x9A	; 154
+ 7d8:	70 e0       	ldi	r23, 0x00	; 0
+ 7da:	83 e0       	ldi	r24, 0x03	; 3
+ 7dc:	91 e0       	ldi	r25, 0x01	; 1
+ 7de:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+			hi=true;
+ 7e2:	81 e0       	ldi	r24, 0x01	; 1
+ 7e4:	80 93 60 00 	sts	0x0060, r24
+		}
+		
+		while(!(PINB&AUTO_MANUAL));
+ 7e8:	b0 9b       	sbis	0x16, 0	; 22
+ 7ea:	fe cf       	rjmp	.-4      	; 0x7e8 <_Z12manual_checkv+0x44>
+		
+	    PORTC&=~MANUAL_OUT;
+ 7ec:	af 98       	cbi	0x15, 7	; 21
+		home();
+ 7ee:	0e 94 5c 02 	call	0x4b8	; 0x4b8 <_Z4homev>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 7f2:	8f e5       	ldi	r24, 0x5F	; 95
+ 7f4:	9a ee       	ldi	r25, 0xEA	; 234
+ 7f6:	01 97       	sbiw	r24, 0x01	; 1
+ 7f8:	f1 f7       	brne	.-4      	; 0x7f6 <_Z12manual_checkv+0x52>
+ 7fa:	00 c0       	rjmp	.+0      	; 0x7fc <_Z12manual_checkv+0x58>
+ 7fc:	00 00       	nop
+ 7fe:	36 c0       	rjmp	.+108    	; 0x86c <_Z12manual_checkv+0xc8>
+		
+		while((PINB&AUTO_MANUAL)&&(!start_stop_status))
+		{
+			if(hi)
+			{
+				lcd.clear();
+ 800:	83 e0       	ldi	r24, 0x03	; 3
+ 802:	91 e0       	ldi	r25, 0x01	; 1
+ 804:	0e 94 48 01 	call	0x290	; 0x290 <_ZN13LiquidCrystal5clearEv>
+				lcd.setCursor(2,0);
+ 808:	40 e0       	ldi	r20, 0x00	; 0
+ 80a:	62 e0       	ldi	r22, 0x02	; 2
+ 80c:	83 e0       	ldi	r24, 0x03	; 3
+ 80e:	91 e0       	ldi	r25, 0x01	; 1
+ 810:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+				lcd.print("Auto mode ON");
+ 814:	69 ea       	ldi	r22, 0xA9	; 169
+ 816:	70 e0       	ldi	r23, 0x00	; 0
+ 818:	83 e0       	ldi	r24, 0x03	; 3
+ 81a:	91 e0       	ldi	r25, 0x01	; 1
+ 81c:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+				lcd.setCursor(4,1);
+ 820:	41 e0       	ldi	r20, 0x01	; 1
+ 822:	64 e0       	ldi	r22, 0x04	; 4
+ 824:	83 e0       	ldi	r24, 0x03	; 3
+ 826:	91 e0       	ldi	r25, 0x01	; 1
+ 828:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+				lcd.print("Press ON");
+ 82c:	66 eb       	ldi	r22, 0xB6	; 182
+ 82e:	70 e0       	ldi	r23, 0x00	; 0
+ 830:	83 e0       	ldi	r24, 0x03	; 3
+ 832:	91 e0       	ldi	r25, 0x01	; 1
+ 834:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+				hi=false;
+ 838:	10 92 60 00 	sts	0x0060, r1
+			}
+			
+			if(!(PINB&START_BUTTON))
+ 83c:	b1 99       	sbic	0x16, 1	; 22
+ 83e:	16 c0       	rjmp	.+44     	; 0x86c <_Z12manual_checkv+0xc8>
+			{   
+				lcd.setCursor(0,1);
+ 840:	41 e0       	ldi	r20, 0x01	; 1
+ 842:	60 e0       	ldi	r22, 0x00	; 0
+ 844:	83 e0       	ldi	r24, 0x03	; 3
+ 846:	91 e0       	ldi	r25, 0x01	; 1
+ 848:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+				lcd.print("                ");
+ 84c:	6b e6       	ldi	r22, 0x6B	; 107
+ 84e:	70 e0       	ldi	r23, 0x00	; 0
+ 850:	83 e0       	ldi	r24, 0x03	; 3
+ 852:	91 e0       	ldi	r25, 0x01	; 1
+ 854:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+				
+				start_stop_status=true;
+ 858:	81 e0       	ldi	r24, 0x01	; 1
+ 85a:	80 93 1d 01 	sts	0x011D, r24
+				home();
+ 85e:	0e 94 5c 02 	call	0x4b8	; 0x4b8 <_Z4homev>
+				var_reset();
+ 862:	0e 94 9a 02 	call	0x534	; 0x534 <_Z9var_resetv>
+
+void runss()
+{
+	while(1)
+	{
+		run();
+ 866:	0e 94 d2 02 	call	0x5a4	; 0x5a4 <_Z3runv>
+ 86a:	fd cf       	rjmp	.-6      	; 0x866 <_Z12manual_checkv+0xc2>
+		
+	    PORTC&=~MANUAL_OUT;
+		home();
+		_delay_ms(30);
+		
+		while((PINB&AUTO_MANUAL)&&(!start_stop_status))
+ 86c:	b0 9b       	sbis	0x16, 0	; 22
+ 86e:	2e c0       	rjmp	.+92     	; 0x8cc <_Z12manual_checkv+0x128>
+ 870:	80 91 1d 01 	lds	r24, 0x011D
+ 874:	81 11       	cpse	r24, r1
+ 876:	2a c0       	rjmp	.+84     	; 0x8cc <_Z12manual_checkv+0x128>
+ 878:	23 c0       	rjmp	.+70     	; 0x8c0 <_Z12manual_checkv+0x11c>
+		goto MANUAL;
+	}
+	
+	else
+	{
+		if(hi)
+ 87a:	80 91 60 00 	lds	r24, 0x0060
+ 87e:	88 23       	and	r24, r24
+ 880:	39 f1       	breq	.+78     	; 0x8d0 <_Z12manual_checkv+0x12c>
+		{
+			lcd.clear();
+ 882:	83 e0       	ldi	r24, 0x03	; 3
+ 884:	91 e0       	ldi	r25, 0x01	; 1
+ 886:	0e 94 48 01 	call	0x290	; 0x290 <_ZN13LiquidCrystal5clearEv>
+			lcd.setCursor(2,0);
+ 88a:	40 e0       	ldi	r20, 0x00	; 0
+ 88c:	62 e0       	ldi	r22, 0x02	; 2
+ 88e:	83 e0       	ldi	r24, 0x03	; 3
+ 890:	91 e0       	ldi	r25, 0x01	; 1
+ 892:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+			lcd.print("Auto mode ON");
+ 896:	69 ea       	ldi	r22, 0xA9	; 169
+ 898:	70 e0       	ldi	r23, 0x00	; 0
+ 89a:	83 e0       	ldi	r24, 0x03	; 3
+ 89c:	91 e0       	ldi	r25, 0x01	; 1
+ 89e:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+			lcd.setCursor(4,1);
+ 8a2:	41 e0       	ldi	r20, 0x01	; 1
+ 8a4:	64 e0       	ldi	r22, 0x04	; 4
+ 8a6:	83 e0       	ldi	r24, 0x03	; 3
+ 8a8:	91 e0       	ldi	r25, 0x01	; 1
+ 8aa:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+			lcd.print("Press ON");
+ 8ae:	66 eb       	ldi	r22, 0xB6	; 182
+ 8b0:	70 e0       	ldi	r23, 0x00	; 0
+ 8b2:	83 e0       	ldi	r24, 0x03	; 3
+ 8b4:	91 e0       	ldi	r25, 0x01	; 1
+ 8b6:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+			hi=false;
+ 8ba:	10 92 60 00 	sts	0x0060, r1
+ 8be:	08 95       	ret
+		home();
+		_delay_ms(30);
+		
+		while((PINB&AUTO_MANUAL)&&(!start_stop_status))
+		{
+			if(hi)
+ 8c0:	80 91 60 00 	lds	r24, 0x0060
+ 8c4:	88 23       	and	r24, r24
+ 8c6:	09 f4       	brne	.+2      	; 0x8ca <_Z12manual_checkv+0x126>
+ 8c8:	b9 cf       	rjmp	.-142    	; 0x83c <_Z12manual_checkv+0x98>
+ 8ca:	9a cf       	rjmp	.-204    	; 0x800 <_Z12manual_checkv+0x5c>
+				break;
+				
+			}
+		}
+		
+		if(!(PINB&AUTO_MANUAL))
+ 8cc:	b0 9b       	sbis	0x16, 0	; 22
+ 8ce:	6a cf       	rjmp	.-300    	; 0x7a4 <_Z12manual_checkv>
+ 8d0:	08 95       	ret
+
+000008d2 <main>:
+bool p_flag=false;
+
+LiquidCrystal lcd(8,9,12,15,24,13,14);
+
+int main(void)
+{
+ 8d2:	cf 93       	push	r28
+ 8d4:	df 93       	push	r29
+ 8d6:	cd b7       	in	r28, 0x3d	; 61
+ 8d8:	de b7       	in	r29, 0x3e	; 62
+ 8da:	68 97       	sbiw	r28, 0x18	; 24
+ 8dc:	0f b6       	in	r0, 0x3f	; 63
+ 8de:	f8 94       	cli
+ 8e0:	de bf       	out	0x3e, r29	; 62
+ 8e2:	0f be       	out	0x3f, r0	; 63
+ 8e4:	cd bf       	out	0x3d, r28	; 61
+	DDRA=0;
+ 8e6:	1a ba       	out	0x1a, r1	; 26
+	DDRB=0;
+ 8e8:	17 ba       	out	0x17, r1	; 23
+	DDRD=0;
+ 8ea:	11 ba       	out	0x11, r1	; 17
+	DDRC=0xff;
+ 8ec:	8f ef       	ldi	r24, 0xFF	; 255
+ 8ee:	84 bb       	out	0x14, r24	; 20
+	
+	PORTA=0xff;
+ 8f0:	8b bb       	out	0x1b, r24	; 27
+	PORTB=0xff;
+ 8f2:	88 bb       	out	0x18, r24	; 24
+	PORTD=0xff;
+ 8f4:	82 bb       	out	0x12, r24	; 18
+	PORTC=0;
+ 8f6:	15 ba       	out	0x15, r1	; 21
+	
+	LiquidCrystal lcd1(8,9,12,15,24,13,14);
+ 8f8:	0f 2e       	mov	r0, r31
+ 8fa:	fe e0       	ldi	r31, 0x0E	; 14
+ 8fc:	af 2e       	mov	r10, r31
+ 8fe:	f0 2d       	mov	r31, r0
+ 900:	0f 2e       	mov	r0, r31
+ 902:	fd e0       	ldi	r31, 0x0D	; 13
+ 904:	cf 2e       	mov	r12, r31
+ 906:	f0 2d       	mov	r31, r0
+ 908:	0f 2e       	mov	r0, r31
+ 90a:	f8 e1       	ldi	r31, 0x18	; 24
+ 90c:	ef 2e       	mov	r14, r31
+ 90e:	f0 2d       	mov	r31, r0
+ 910:	0f e0       	ldi	r16, 0x0F	; 15
+ 912:	2c e0       	ldi	r18, 0x0C	; 12
+ 914:	49 e0       	ldi	r20, 0x09	; 9
+ 916:	68 e0       	ldi	r22, 0x08	; 8
+ 918:	ce 01       	movw	r24, r28
+ 91a:	01 96       	adiw	r24, 0x01	; 1
+ 91c:	0e 94 30 02 	call	0x460	; 0x460 <_ZN13LiquidCrystalC1Ehhhhhhh>
+
+	lcd.begin(16,2);
+ 920:	20 e0       	ldi	r18, 0x00	; 0
+ 922:	42 e0       	ldi	r20, 0x02	; 2
+ 924:	60 e1       	ldi	r22, 0x10	; 16
+ 926:	83 e0       	ldi	r24, 0x03	; 3
+ 928:	91 e0       	ldi	r25, 0x01	; 1
+ 92a:	0e 94 6e 01 	call	0x2dc	; 0x2dc <_ZN13LiquidCrystal5beginEhhh>
+	lcd.clear();
+ 92e:	83 e0       	ldi	r24, 0x03	; 3
+ 930:	91 e0       	ldi	r25, 0x01	; 1
+ 932:	0e 94 48 01 	call	0x290	; 0x290 <_ZN13LiquidCrystal5clearEv>
+	lcd.print("Resnova Pvt. Ltd");
+ 936:	6f eb       	ldi	r22, 0xBF	; 191
+ 938:	70 e0       	ldi	r23, 0x00	; 0
+ 93a:	83 e0       	ldi	r24, 0x03	; 3
+ 93c:	91 e0       	ldi	r25, 0x01	; 1
+ 93e:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+	lcd.setCursor(4,1);
+ 942:	41 e0       	ldi	r20, 0x01	; 1
+ 944:	64 e0       	ldi	r22, 0x04	; 4
+ 946:	83 e0       	ldi	r24, 0x03	; 3
+ 948:	91 e0       	ldi	r25, 0x01	; 1
+ 94a:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+	lcd.print("RTF-900");
+ 94e:	60 ed       	ldi	r22, 0xD0	; 208
+ 950:	70 e0       	ldi	r23, 0x00	; 0
+ 952:	83 e0       	ldi	r24, 0x03	; 3
+ 954:	91 e0       	ldi	r25, 0x01	; 1
+ 956:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+ 95a:	2f ef       	ldi	r18, 0xFF	; 255
+ 95c:	8d e3       	ldi	r24, 0x3D	; 61
+ 95e:	99 e4       	ldi	r25, 0x49	; 73
+ 960:	21 50       	subi	r18, 0x01	; 1
+ 962:	80 40       	sbci	r24, 0x00	; 0
+ 964:	90 40       	sbci	r25, 0x00	; 0
+ 966:	e1 f7       	brne	.-8      	; 0x960 <main+0x8e>
+ 968:	00 c0       	rjmp	.+0      	; 0x96a <main+0x98>
+ 96a:	00 00       	nop
+	_delay_ms(3000);
+	
+	home();
+ 96c:	0e 94 5c 02 	call	0x4b8	; 0x4b8 <_Z4homev>
+	
+	
+	
+	if((PINB&AUTO_MANUAL))
+ 970:	b0 9b       	sbis	0x16, 0	; 22
+ 972:	12 c0       	rjmp	.+36     	; 0x998 <main+0xc6>
+	{
+		while(PINB&START_BUTTON)
+ 974:	b1 9b       	sbis	0x16, 1	; 22
+ 976:	04 c0       	rjmp	.+8      	; 0x980 <main+0xae>
+		manual_check();
+ 978:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+	
+	
+	
+	if((PINB&AUTO_MANUAL))
+	{
+		while(PINB&START_BUTTON)
+ 97c:	b1 99       	sbic	0x16, 1	; 22
+ 97e:	fc cf       	rjmp	.-8      	; 0x978 <main+0xa6>
+		manual_check();
+		
+		lcd.setCursor(0,1);
+ 980:	41 e0       	ldi	r20, 0x01	; 1
+ 982:	60 e0       	ldi	r22, 0x00	; 0
+ 984:	83 e0       	ldi	r24, 0x03	; 3
+ 986:	91 e0       	ldi	r25, 0x01	; 1
+ 988:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+		lcd.print("                ");
+ 98c:	6b e6       	ldi	r22, 0x6B	; 107
+ 98e:	70 e0       	ldi	r23, 0x00	; 0
+ 990:	83 e0       	ldi	r24, 0x03	; 3
+ 992:	91 e0       	ldi	r25, 0x01	; 1
+ 994:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+
+void runss()
+{
+	while(1)
+	{
+		run();
+ 998:	0e 94 d2 02 	call	0x5a4	; 0x5a4 <_Z3runv>
+ 99c:	fd cf       	rjmp	.-6      	; 0x998 <main+0xc6>
+
+0000099e <_Z4haltv>:
+
+void halt()
+{
+	static bool conveyor_flag=false;
+	
+	if(PINC&CONVEYOR)
+ 99e:	9c 9b       	sbis	0x13, 4	; 19
+ 9a0:	06 c0       	rjmp	.+12     	; 0x9ae <_Z4haltv+0x10>
+	{
+		PORTC&=~(CONVEYOR|CONVEYOR_LED);
+ 9a2:	85 b3       	in	r24, 0x15	; 21
+ 9a4:	8f 7a       	andi	r24, 0xAF	; 175
+ 9a6:	85 bb       	out	0x15, r24	; 21
+		conveyor_flag=true;
+ 9a8:	81 e0       	ldi	r24, 0x01	; 1
+ 9aa:	80 93 02 01 	sts	0x0102, r24
+	}
+	
+	lcd.clear();
+ 9ae:	83 e0       	ldi	r24, 0x03	; 3
+ 9b0:	91 e0       	ldi	r25, 0x01	; 1
+ 9b2:	0e 94 48 01 	call	0x290	; 0x290 <_ZN13LiquidCrystal5clearEv>
+	lcd.setCursor(5,0);
+ 9b6:	40 e0       	ldi	r20, 0x00	; 0
+ 9b8:	65 e0       	ldi	r22, 0x05	; 5
+ 9ba:	83 e0       	ldi	r24, 0x03	; 3
+ 9bc:	91 e0       	ldi	r25, 0x01	; 1
+ 9be:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+	lcd.print("Halted");
+ 9c2:	68 ed       	ldi	r22, 0xD8	; 216
+ 9c4:	70 e0       	ldi	r23, 0x00	; 0
+ 9c6:	83 e0       	ldi	r24, 0x03	; 3
+ 9c8:	91 e0       	ldi	r25, 0x01	; 1
+ 9ca:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+	lcd.setCursor(4,1);
+ 9ce:	41 e0       	ldi	r20, 0x01	; 1
+ 9d0:	64 e0       	ldi	r22, 0x04	; 4
+ 9d2:	83 e0       	ldi	r24, 0x03	; 3
+ 9d4:	91 e0       	ldi	r25, 0x01	; 1
+ 9d6:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+	lcd.print("Press ON");
+ 9da:	66 eb       	ldi	r22, 0xB6	; 182
+ 9dc:	70 e0       	ldi	r23, 0x00	; 0
+ 9de:	83 e0       	ldi	r24, 0x03	; 3
+ 9e0:	91 e0       	ldi	r25, 0x01	; 1
+ 9e2:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+	
+	while(PINB&START_BUTTON)
+ 9e6:	b1 9b       	sbis	0x16, 1	; 22
+ 9e8:	04 c0       	rjmp	.+8      	; 0x9f2 <_Z4haltv+0x54>
+	{
+		manual_check();
+ 9ea:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+	lcd.setCursor(5,0);
+	lcd.print("Halted");
+	lcd.setCursor(4,1);
+	lcd.print("Press ON");
+	
+	while(PINB&START_BUTTON)
+ 9ee:	b1 99       	sbic	0x16, 1	; 22
+ 9f0:	fc cf       	rjmp	.-8      	; 0x9ea <_Z4haltv+0x4c>
+	{
+		manual_check();
+	}
+	
+	lcd.clear();
+ 9f2:	83 e0       	ldi	r24, 0x03	; 3
+ 9f4:	91 e0       	ldi	r25, 0x01	; 1
+ 9f6:	0e 94 48 01 	call	0x290	; 0x290 <_ZN13LiquidCrystal5clearEv>
+	lcd.setCursor(2,0);
+ 9fa:	40 e0       	ldi	r20, 0x00	; 0
+ 9fc:	62 e0       	ldi	r22, 0x02	; 2
+ 9fe:	83 e0       	ldi	r24, 0x03	; 3
+ a00:	91 e0       	ldi	r25, 0x01	; 1
+ a02:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+	lcd.print("Auto mode ON");
+ a06:	69 ea       	ldi	r22, 0xA9	; 169
+ a08:	70 e0       	ldi	r23, 0x00	; 0
+ a0a:	83 e0       	ldi	r24, 0x03	; 3
+ a0c:	91 e0       	ldi	r25, 0x01	; 1
+ a0e:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+	
+	if(conveyor_flag)
+ a12:	80 91 02 01 	lds	r24, 0x0102
+ a16:	88 23       	and	r24, r24
+ a18:	29 f0       	breq	.+10     	; 0xa24 <_Z4haltv+0x86>
+	{
+		PORTC|=(CONVEYOR|CONVEYOR_LED);
+ a1a:	85 b3       	in	r24, 0x15	; 21
+ a1c:	80 65       	ori	r24, 0x50	; 80
+ a1e:	85 bb       	out	0x15, r24	; 21
+		conveyor_flag=false;
+ a20:	10 92 02 01 	sts	0x0102, r1
+ a24:	08 95       	ret
+
+00000a26 <_Z12shutter_openv>:
+	cup=LEFT;
+}
+
+
+void shutter_open()
+{
+ a26:	cf 93       	push	r28
+ a28:	df 93       	push	r29
+	
+	
+	if(cup)
+ a2a:	80 91 1e 01 	lds	r24, 0x011E
+ a2e:	88 23       	and	r24, r24
+ a30:	09 f4       	brne	.+2      	; 0xa34 <_Z12shutter_openv+0xe>
+ a32:	a0 c0       	rjmp	.+320    	; 0xb74 <_Z12shutter_openv+0x14e>
+	{
+		cup=!cup;
+ a34:	10 92 1e 01 	sts	0x011E, r1
+		
+		if(!(PINA&SHUTTER_SENSOR_L))
+ a38:	ca 99       	sbic	0x19, 2	; 25
+ a3a:	02 c0       	rjmp	.+4      	; 0xa40 <_Z12shutter_openv+0x1a>
+		PORTC&=~FLAP;
+ a3c:	a8 98       	cbi	0x15, 0	; 21
+ a3e:	03 c0       	rjmp	.+6      	; 0xa46 <_Z12shutter_openv+0x20>
+		
+		else PORTC&=~((CONVEYOR)|(CONVEYOR_LED));
+ a40:	85 b3       	in	r24, 0x15	; 21
+ a42:	8f 7a       	andi	r24, 0xAF	; 175
+ a44:	85 bb       	out	0x15, r24	; 21
+		
+		if(!(PINB&PRESENCE_SENSOR_R))
+ a46:	b2 99       	sbic	0x16, 2	; 22
+ a48:	7e c0       	rjmp	.+252    	; 0xb46 <_Z12shutter_openv+0x120>
+		{
+			PORTC|=R_SHUTTER;
+ a4a:	aa 9a       	sbi	0x15, 2	; 21
+ a4c:	c5 e6       	ldi	r28, 0x65	; 101
+				manual_check();
+				stop_check();
+				
+				if((!p_flag)&&(!new_cup_flag_l))
+				{
+					p_flag=true;
+ a4e:	d1 e0       	ldi	r29, 0x01	; 1
+		{
+			PORTC|=R_SHUTTER;
+			
+			for(uint8_t x=0;x<=100;x++)
+			{
+				check_new_cup();
+ a50:	0e 94 a6 02 	call	0x54c	; 0x54c <_Z13check_new_cupv>
+				conveyor_stop();
+ a54:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+				manual_check();
+ a58:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+				stop_check();
+ a5c:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+				
+				if((!p_flag)&&(!new_cup_flag_l))
+ a60:	80 91 1b 01 	lds	r24, 0x011B
+ a64:	81 11       	cpse	r24, r1
+ a66:	1e c0       	rjmp	.+60     	; 0xaa4 <_Z12shutter_openv+0x7e>
+ a68:	80 91 62 00 	lds	r24, 0x0062
+ a6c:	81 11       	cpse	r24, r1
+ a6e:	1a c0       	rjmp	.+52     	; 0xaa4 <_Z12shutter_openv+0x7e>
+				{
+					p_flag=true;
+ a70:	d0 93 1b 01 	sts	0x011B, r29
+					lcd.setCursor(0,1);
+ a74:	4d 2f       	mov	r20, r29
+ a76:	60 e0       	ldi	r22, 0x00	; 0
+ a78:	83 e0       	ldi	r24, 0x03	; 3
+ a7a:	91 e0       	ldi	r25, 0x01	; 1
+ a7c:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+					lcd.print("                ");
+ a80:	6b e6       	ldi	r22, 0x6B	; 107
+ a82:	70 e0       	ldi	r23, 0x00	; 0
+ a84:	83 e0       	ldi	r24, 0x03	; 3
+ a86:	91 e0       	ldi	r25, 0x01	; 1
+ a88:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+					lcd.setCursor(1,1);
+ a8c:	4d 2f       	mov	r20, r29
+ a8e:	6d 2f       	mov	r22, r29
+ a90:	83 e0       	ldi	r24, 0x03	; 3
+ a92:	91 e0       	ldi	r25, 0x01	; 1
+ a94:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+					lcd.print("Place new L Cup");
+ a98:	6f ed       	ldi	r22, 0xDF	; 223
+ a9a:	70 e0       	ldi	r23, 0x00	; 0
+ a9c:	83 e0       	ldi	r24, 0x03	; 3
+ a9e:	91 e0       	ldi	r25, 0x01	; 1
+ aa0:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+ aa4:	8f e1       	ldi	r24, 0x1F	; 31
+ aa6:	9e e4       	ldi	r25, 0x4E	; 78
+ aa8:	01 97       	sbiw	r24, 0x01	; 1
+ aaa:	f1 f7       	brne	.-4      	; 0xaa8 <_Z12shutter_openv+0x82>
+ aac:	00 c0       	rjmp	.+0      	; 0xaae <_Z12shutter_openv+0x88>
+ aae:	00 00       	nop
+ ab0:	c1 50       	subi	r28, 0x01	; 1
+		
+		if(!(PINB&PRESENCE_SENSOR_R))
+		{
+			PORTC|=R_SHUTTER;
+			
+			for(uint8_t x=0;x<=100;x++)
+ ab2:	71 f6       	brne	.-100    	; 0xa50 <_Z12shutter_openv+0x2a>
+				}
+				
+				_delay_ms(10);
+			}
+			
+			PORTC&=~R_SHUTTER;
+ ab4:	aa 98       	cbi	0x15, 2	; 21
+			new_cup_flag_r=false;
+ ab6:	10 92 61 00 	sts	0x0061, r1
+ aba:	cd e2       	ldi	r28, 0x2D	; 45
+ abc:	d1 e0       	ldi	r29, 0x01	; 1
+			
+			for(int x=0;x<=300;x++)
+			{
+				check_new_cup();
+ abe:	0e 94 a6 02 	call	0x54c	; 0x54c <_Z13check_new_cupv>
+				conveyor_stop();
+ ac2:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+				manual_check();
+ ac6:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+				stop_check();
+ aca:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+				
+				if(!(PINA&WEIGHT_SENSOR_L))
+ ace:	ce 9b       	sbis	0x19, 6	; 25
+				PORTC|=FLAP;
+ ad0:	a8 9a       	sbi	0x15, 0	; 21
+				
+				if(new_cup_flag_l)
+ ad2:	80 91 62 00 	lds	r24, 0x0062
+ ad6:	88 23       	and	r24, r24
+ ad8:	61 f0       	breq	.+24     	; 0xaf2 <_Z12shutter_openv+0xcc>
+				{
+					lcd.setCursor(0,1);
+ ada:	41 e0       	ldi	r20, 0x01	; 1
+ adc:	60 e0       	ldi	r22, 0x00	; 0
+ ade:	83 e0       	ldi	r24, 0x03	; 3
+ ae0:	91 e0       	ldi	r25, 0x01	; 1
+ ae2:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+					lcd.print("                ");
+ ae6:	6b e6       	ldi	r22, 0x6B	; 107
+ ae8:	70 e0       	ldi	r23, 0x00	; 0
+ aea:	83 e0       	ldi	r24, 0x03	; 3
+ aec:	91 e0       	ldi	r25, 0x01	; 1
+ aee:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+ af2:	8f e1       	ldi	r24, 0x1F	; 31
+ af4:	9e e4       	ldi	r25, 0x4E	; 78
+ af6:	01 97       	sbiw	r24, 0x01	; 1
+ af8:	f1 f7       	brne	.-4      	; 0xaf6 <_Z12shutter_openv+0xd0>
+ afa:	00 c0       	rjmp	.+0      	; 0xafc <_Z12shutter_openv+0xd6>
+ afc:	00 00       	nop
+ afe:	21 97       	sbiw	r28, 0x01	; 1
+			}
+			
+			PORTC&=~R_SHUTTER;
+			new_cup_flag_r=false;
+			
+			for(int x=0;x<=300;x++)
+ b00:	20 97       	sbiw	r28, 0x00	; 0
+ b02:	e9 f6       	brne	.-70     	; 0xabe <_Z12shutter_openv+0x98>
+				}
+				
+				_delay_ms(10);
+			}
+			
+			while(!new_cup_flag_l)
+ b04:	80 91 62 00 	lds	r24, 0x0062
+ b08:	81 11       	cpse	r24, r1
+ b0a:	0f c0       	rjmp	.+30     	; 0xb2a <_Z12shutter_openv+0x104>
+				check_new_cup();
+				manual_check();
+				conveyor_stop();
+				stop_check();
+				
+				wait_check=true;
+ b0c:	c1 e0       	ldi	r28, 0x01	; 1
+				_delay_ms(10);
+			}
+			
+			while(!new_cup_flag_l)
+			{
+				check_new_cup();
+ b0e:	0e 94 a6 02 	call	0x54c	; 0x54c <_Z13check_new_cupv>
+				manual_check();
+ b12:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+				conveyor_stop();
+ b16:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+				stop_check();
+ b1a:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+				
+				wait_check=true;
+ b1e:	c0 93 1c 01 	sts	0x011C, r28
+				}
+				
+				_delay_ms(10);
+			}
+			
+			while(!new_cup_flag_l)
+ b22:	80 91 62 00 	lds	r24, 0x0062
+ b26:	88 23       	and	r24, r24
+ b28:	91 f3       	breq	.-28     	; 0xb0e <_Z12shutter_openv+0xe8>
+				conveyor_stop();
+				stop_check();
+				
+				wait_check=true;
+			}
+			p_flag=false;
+ b2a:	10 92 1b 01 	sts	0x011B, r1
+			lcd.setCursor(0,1);
+ b2e:	41 e0       	ldi	r20, 0x01	; 1
+ b30:	60 e0       	ldi	r22, 0x00	; 0
+ b32:	83 e0       	ldi	r24, 0x03	; 3
+ b34:	91 e0       	ldi	r25, 0x01	; 1
+ b36:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+			lcd.print("                ");
+ b3a:	6b e6       	ldi	r22, 0x6B	; 107
+ b3c:	70 e0       	ldi	r23, 0x00	; 0
+ b3e:	83 e0       	ldi	r24, 0x03	; 3
+ b40:	91 e0       	ldi	r25, 0x01	; 1
+ b42:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+			
+		}
+		
+		if(wait_check)
+ b46:	80 91 1c 01 	lds	r24, 0x011C
+ b4a:	88 23       	and	r24, r24
+ b4c:	89 f0       	breq	.+34     	; 0xb70 <_Z12shutter_openv+0x14a>
+ b4e:	c9 ec       	ldi	r28, 0xC9	; 201
+		{
+			for(uint8_t x=0;x<=200;x++)
+			{
+				conveyor_stop();
+ b50:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+				manual_check();
+ b54:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+				stop_check();
+ b58:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+ b5c:	8f e1       	ldi	r24, 0x1F	; 31
+ b5e:	9e e4       	ldi	r25, 0x4E	; 78
+ b60:	01 97       	sbiw	r24, 0x01	; 1
+ b62:	f1 f7       	brne	.-4      	; 0xb60 <_Z12shutter_openv+0x13a>
+ b64:	00 c0       	rjmp	.+0      	; 0xb66 <_Z12shutter_openv+0x140>
+ b66:	00 00       	nop
+ b68:	c1 50       	subi	r28, 0x01	; 1
+			
+		}
+		
+		if(wait_check)
+		{
+			for(uint8_t x=0;x<=200;x++)
+ b6a:	91 f7       	brne	.-28     	; 0xb50 <_Z12shutter_openv+0x12a>
+				manual_check();
+				stop_check();
+				_delay_ms(10);
+			}
+			
+			wait_check=false;
+ b6c:	10 92 1c 01 	sts	0x011C, r1
+		}
+		
+		PORTC&=~CHANGE_PISTON;
+ b70:	ab 98       	cbi	0x15, 3	; 21
+ b72:	bf c0       	rjmp	.+382    	; 0xcf2 <_Z12shutter_openv+0x2cc>
+}
+
+else if(!cup)
+{
+  cup=!cup;
+ b74:	81 e0       	ldi	r24, 0x01	; 1
+ b76:	80 93 1e 01 	sts	0x011E, r24
+  
+  if(!(PINA&SHUTTER_SENSOR_R))
+ b7a:	c9 99       	sbic	0x19, 1	; 25
+ b7c:	02 c0       	rjmp	.+4      	; 0xb82 <_Z12shutter_openv+0x15c>
+  PORTC|=FLAP;
+ b7e:	a8 9a       	sbi	0x15, 0	; 21
+ b80:	03 c0       	rjmp	.+6      	; 0xb88 <_Z12shutter_openv+0x162>
+  
+  else
+  {
+	  PORTC&=~(CONVEYOR|CONVEYOR_LED);
+ b82:	85 b3       	in	r24, 0x15	; 21
+ b84:	8f 7a       	andi	r24, 0xAF	; 175
+ b86:	85 bb       	out	0x15, r24	; 21
+  }
+  
+  if(!(PIND&PRESENCE_SENSOR_L))
+ b88:	83 99       	sbic	0x10, 3	; 16
+ b8a:	b3 c0       	rjmp	.+358    	; 0xcf2 <_Z12shutter_openv+0x2cc>
+  {
+	  PORTC|=L_SHUTTER;
+ b8c:	a9 9a       	sbi	0x15, 1	; 21
+ b8e:	c5 e6       	ldi	r28, 0x65	; 101
+	  
+	  for(uint8_t x=0;x<=100;x++)
+	  {
+		  check_new_cup();
+ b90:	0e 94 a6 02 	call	0x54c	; 0x54c <_Z13check_new_cupv>
+		  conveyor_stop();
+ b94:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+		  manual_check();
+ b98:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+		  stop_check();
+ b9c:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+	  
+	  
+	  if((!p_flag)&&(!new_cup_flag_r))
+ ba0:	80 91 1b 01 	lds	r24, 0x011B
+ ba4:	81 11       	cpse	r24, r1
+ ba6:	1f c0       	rjmp	.+62     	; 0xbe6 <_Z12shutter_openv+0x1c0>
+ ba8:	80 91 61 00 	lds	r24, 0x0061
+ bac:	81 11       	cpse	r24, r1
+ bae:	1b c0       	rjmp	.+54     	; 0xbe6 <_Z12shutter_openv+0x1c0>
+	  {
+		  lcd.setCursor(0,1);
+ bb0:	41 e0       	ldi	r20, 0x01	; 1
+ bb2:	60 e0       	ldi	r22, 0x00	; 0
+ bb4:	83 e0       	ldi	r24, 0x03	; 3
+ bb6:	91 e0       	ldi	r25, 0x01	; 1
+ bb8:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+		  lcd.print("                ");
+ bbc:	6b e6       	ldi	r22, 0x6B	; 107
+ bbe:	70 e0       	ldi	r23, 0x00	; 0
+ bc0:	83 e0       	ldi	r24, 0x03	; 3
+ bc2:	91 e0       	ldi	r25, 0x01	; 1
+ bc4:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+		  lcd.setCursor(1,1);
+ bc8:	41 e0       	ldi	r20, 0x01	; 1
+ bca:	61 e0       	ldi	r22, 0x01	; 1
+ bcc:	83 e0       	ldi	r24, 0x03	; 3
+ bce:	91 e0       	ldi	r25, 0x01	; 1
+ bd0:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+		  lcd.print("Place new R Cup");
+ bd4:	6f ee       	ldi	r22, 0xEF	; 239
+ bd6:	70 e0       	ldi	r23, 0x00	; 0
+ bd8:	83 e0       	ldi	r24, 0x03	; 3
+ bda:	91 e0       	ldi	r25, 0x01	; 1
+ bdc:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+		  p_flag=true;
+ be0:	81 e0       	ldi	r24, 0x01	; 1
+ be2:	80 93 1b 01 	sts	0x011B, r24
+ be6:	8f e1       	ldi	r24, 0x1F	; 31
+ be8:	9e e4       	ldi	r25, 0x4E	; 78
+ bea:	01 97       	sbiw	r24, 0x01	; 1
+ bec:	f1 f7       	brne	.-4      	; 0xbea <_Z12shutter_openv+0x1c4>
+ bee:	00 c0       	rjmp	.+0      	; 0xbf0 <_Z12shutter_openv+0x1ca>
+ bf0:	00 00       	nop
+ bf2:	c1 50       	subi	r28, 0x01	; 1
+  
+  if(!(PIND&PRESENCE_SENSOR_L))
+  {
+	  PORTC|=L_SHUTTER;
+	  
+	  for(uint8_t x=0;x<=100;x++)
+ bf4:	69 f6       	brne	.-102    	; 0xb90 <_Z12shutter_openv+0x16a>
+	  }
+	  _delay_ms(10);
+	  }
+	  
+  
+      PORTC&=~L_SHUTTER;
+ bf6:	a9 98       	cbi	0x15, 1	; 21
+  
+      new_cup_flag_l=false;
+ bf8:	10 92 62 00 	sts	0x0062, r1
+ bfc:	cd e2       	ldi	r28, 0x2D	; 45
+ bfe:	d1 e0       	ldi	r29, 0x01	; 1
+  for(int x=0;x<=300;x++)
+  {   
+	  //lcd.clear();
+	  //lcd.print("DELAY");
+	  
+	  check_new_cup();
+ c00:	0e 94 a6 02 	call	0x54c	; 0x54c <_Z13check_new_cupv>
+	  conveyor_stop();
+ c04:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+	  manual_check();
+ c08:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+	  stop_check();
+ c0c:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+	  
+	  if(!(PINA&WEIGHT_SENSOR_R))
+ c10:	cd 9b       	sbis	0x19, 5	; 25
+	   PORTC&=~FLAP;
+ c12:	a8 98       	cbi	0x15, 0	; 21
+	   
+	   if(new_cup_flag_r)
+ c14:	80 91 61 00 	lds	r24, 0x0061
+ c18:	88 23       	and	r24, r24
+ c1a:	61 f0       	breq	.+24     	; 0xc34 <_Z12shutter_openv+0x20e>
+	   {
+		   lcd.setCursor(0,1);
+ c1c:	41 e0       	ldi	r20, 0x01	; 1
+ c1e:	60 e0       	ldi	r22, 0x00	; 0
+ c20:	83 e0       	ldi	r24, 0x03	; 3
+ c22:	91 e0       	ldi	r25, 0x01	; 1
+ c24:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+		   lcd.print("                ");
+ c28:	6b e6       	ldi	r22, 0x6B	; 107
+ c2a:	70 e0       	ldi	r23, 0x00	; 0
+ c2c:	83 e0       	ldi	r24, 0x03	; 3
+ c2e:	91 e0       	ldi	r25, 0x01	; 1
+ c30:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+ c34:	8f e1       	ldi	r24, 0x1F	; 31
+ c36:	9e e4       	ldi	r25, 0x4E	; 78
+ c38:	01 97       	sbiw	r24, 0x01	; 1
+ c3a:	f1 f7       	brne	.-4      	; 0xc38 <_Z12shutter_openv+0x212>
+ c3c:	00 c0       	rjmp	.+0      	; 0xc3e <_Z12shutter_openv+0x218>
+ c3e:	00 00       	nop
+ c40:	21 97       	sbiw	r28, 0x01	; 1
+  
+      PORTC&=~L_SHUTTER;
+  
+      new_cup_flag_l=false;
+  
+  for(int x=0;x<=300;x++)
+ c42:	20 97       	sbiw	r28, 0x00	; 0
+ c44:	e9 f6       	brne	.-70     	; 0xc00 <_Z12shutter_openv+0x1da>
+  }
+  //lcd.clear();
+  //lcd.print("OUT");
+  
+  
+  while(!new_cup_flag_r)
+ c46:	80 91 61 00 	lds	r24, 0x0061
+ c4a:	81 11       	cpse	r24, r1
+ c4c:	2e c0       	rjmp	.+92     	; 0xcaa <_Z12shutter_openv+0x284>
+  {
+	  check_new_cup();
+ c4e:	0e 94 a6 02 	call	0x54c	; 0x54c <_Z13check_new_cupv>
+	  
+	  if(!p_flag)
+ c52:	80 91 1b 01 	lds	r24, 0x011B
+ c56:	81 11       	cpse	r24, r1
+ c58:	1b c0       	rjmp	.+54     	; 0xc90 <_Z12shutter_openv+0x26a>
+	  {   
+		  lcd.setCursor(0,1);
+ c5a:	41 e0       	ldi	r20, 0x01	; 1
+ c5c:	60 e0       	ldi	r22, 0x00	; 0
+ c5e:	83 e0       	ldi	r24, 0x03	; 3
+ c60:	91 e0       	ldi	r25, 0x01	; 1
+ c62:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+		  lcd.print("                ");
+ c66:	6b e6       	ldi	r22, 0x6B	; 107
+ c68:	70 e0       	ldi	r23, 0x00	; 0
+ c6a:	83 e0       	ldi	r24, 0x03	; 3
+ c6c:	91 e0       	ldi	r25, 0x01	; 1
+ c6e:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+		  lcd.setCursor(1,1);
+ c72:	41 e0       	ldi	r20, 0x01	; 1
+ c74:	61 e0       	ldi	r22, 0x01	; 1
+ c76:	83 e0       	ldi	r24, 0x03	; 3
+ c78:	91 e0       	ldi	r25, 0x01	; 1
+ c7a:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+		  lcd.print("Place new R Cup");
+ c7e:	6f ee       	ldi	r22, 0xEF	; 239
+ c80:	70 e0       	ldi	r23, 0x00	; 0
+ c82:	83 e0       	ldi	r24, 0x03	; 3
+ c84:	91 e0       	ldi	r25, 0x01	; 1
+ c86:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+		  p_flag=true;
+ c8a:	81 e0       	ldi	r24, 0x01	; 1
+ c8c:	80 93 1b 01 	sts	0x011B, r24
+	  }
+	  
+	  manual_check();
+ c90:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+	  conveyor_stop();
+ c94:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+	  stop_check();
+ c98:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+	  
+	  wait_check=true;
+ c9c:	81 e0       	ldi	r24, 0x01	; 1
+ c9e:	80 93 1c 01 	sts	0x011C, r24
+  }
+  //lcd.clear();
+  //lcd.print("OUT");
+  
+  
+  while(!new_cup_flag_r)
+ ca2:	80 91 61 00 	lds	r24, 0x0061
+ ca6:	88 23       	and	r24, r24
+ ca8:	91 f2       	breq	.-92     	; 0xc4e <_Z12shutter_openv+0x228>
+	  stop_check();
+	  
+	  wait_check=true;
+  }
+  
+    p_flag=false;
+ caa:	10 92 1b 01 	sts	0x011B, r1
+  	lcd.setCursor(0,1);
+ cae:	41 e0       	ldi	r20, 0x01	; 1
+ cb0:	60 e0       	ldi	r22, 0x00	; 0
+ cb2:	83 e0       	ldi	r24, 0x03	; 3
+ cb4:	91 e0       	ldi	r25, 0x01	; 1
+ cb6:	0e 94 51 01 	call	0x2a2	; 0x2a2 <_ZN13LiquidCrystal9setCursorEhh>
+  	lcd.print("                ");
+ cba:	6b e6       	ldi	r22, 0x6B	; 107
+ cbc:	70 e0       	ldi	r23, 0x00	; 0
+ cbe:	83 e0       	ldi	r24, 0x03	; 3
+ cc0:	91 e0       	ldi	r25, 0x01	; 1
+ cc2:	0e 94 c7 06 	call	0xd8e	; 0xd8e <_ZN5Print5printEPKc>
+  
+  
+  if(wait_check)
+ cc6:	80 91 1c 01 	lds	r24, 0x011C
+ cca:	88 23       	and	r24, r24
+ ccc:	89 f0       	breq	.+34     	; 0xcf0 <_Z12shutter_openv+0x2ca>
+ cce:	c9 ec       	ldi	r28, 0xC9	; 201
+  {
+	  for(uint8_t x=0;x<=200;x++)
+	  {
+		  conveyor_stop();
+ cd0:	0e 94 83 02 	call	0x506	; 0x506 <_Z13conveyor_stopv>
+		  manual_check();
+ cd4:	0e 94 d2 03 	call	0x7a4	; 0x7a4 <_Z12manual_checkv>
+		  stop_check();
+ cd8:	0e 94 ce 02 	call	0x59c	; 0x59c <_Z10stop_checkv>
+ cdc:	8f e1       	ldi	r24, 0x1F	; 31
+ cde:	9e e4       	ldi	r25, 0x4E	; 78
+ ce0:	01 97       	sbiw	r24, 0x01	; 1
+ ce2:	f1 f7       	brne	.-4      	; 0xce0 <_Z12shutter_openv+0x2ba>
+ ce4:	00 c0       	rjmp	.+0      	; 0xce6 <_Z12shutter_openv+0x2c0>
+ ce6:	00 00       	nop
+ ce8:	c1 50       	subi	r28, 0x01	; 1
+  	lcd.print("                ");
+  
+  
+  if(wait_check)
+  {
+	  for(uint8_t x=0;x<=200;x++)
+ cea:	91 f7       	brne	.-28     	; 0xcd0 <_Z12shutter_openv+0x2aa>
+		  manual_check();
+		  stop_check();
+		  _delay_ms(10);
+	  }
+	  
+	  wait_check=false;
+ cec:	10 92 1c 01 	sts	0x011C, r1
+	  
+  }
+  
+  PORTC|=CHANGE_PISTON;
+ cf0:	ab 9a       	sbi	0x15, 3	; 21
+  
+  
+}
+}
+
+}
+ cf2:	df 91       	pop	r29
+ cf4:	cf 91       	pop	r28
+ cf6:	08 95       	ret
+
+00000cf8 <_GLOBAL__sub_I_cup>:
+{
+	while(1)
+	{
+		run();
+	}
+ cf8:	af 92       	push	r10
+ cfa:	cf 92       	push	r12
+ cfc:	ef 92       	push	r14
+ cfe:	0f 93       	push	r16
+bool new_cup_flag_r=true;
+bool start_stop_status=false;
+bool wait_check=false;
+bool p_flag=false;
+
+LiquidCrystal lcd(8,9,12,15,24,13,14);
+ d00:	0f 2e       	mov	r0, r31
+ d02:	fe e0       	ldi	r31, 0x0E	; 14
+ d04:	af 2e       	mov	r10, r31
+ d06:	f0 2d       	mov	r31, r0
+ d08:	0f 2e       	mov	r0, r31
+ d0a:	fd e0       	ldi	r31, 0x0D	; 13
+ d0c:	cf 2e       	mov	r12, r31
+ d0e:	f0 2d       	mov	r31, r0
+ d10:	0f 2e       	mov	r0, r31
+ d12:	f8 e1       	ldi	r31, 0x18	; 24
+ d14:	ef 2e       	mov	r14, r31
+ d16:	f0 2d       	mov	r31, r0
+ d18:	0f e0       	ldi	r16, 0x0F	; 15
+ d1a:	2c e0       	ldi	r18, 0x0C	; 12
+ d1c:	49 e0       	ldi	r20, 0x09	; 9
+ d1e:	68 e0       	ldi	r22, 0x08	; 8
+ d20:	83 e0       	ldi	r24, 0x03	; 3
+ d22:	91 e0       	ldi	r25, 0x01	; 1
+ d24:	0e 94 30 02 	call	0x460	; 0x460 <_ZN13LiquidCrystalC1Ehhhhhhh>
+{
+	while(1)
+	{
+		run();
+	}
+ d28:	0f 91       	pop	r16
+ d2a:	ef 90       	pop	r14
+ d2c:	cf 90       	pop	r12
+ d2e:	af 90       	pop	r10
+ d30:	08 95       	ret
+
+00000d32 <_ZN5Print5writeEPKhj>:
+
+// Public Methods //////////////////////////////////////////////////////////////
+
+/* default implementation: may be overridden */
+size_t Print::write(const uint8_t *buffer, size_t size)
+{
+ d32:	cf 92       	push	r12
+ d34:	df 92       	push	r13
+ d36:	ef 92       	push	r14
+ d38:	ff 92       	push	r15
+ d3a:	0f 93       	push	r16
+ d3c:	1f 93       	push	r17
+ d3e:	cf 93       	push	r28
+ d40:	df 93       	push	r29
+ d42:	6c 01       	movw	r12, r24
+  size_t n = 0;
+  while (size--) {
+ d44:	41 15       	cp	r20, r1
+ d46:	51 05       	cpc	r21, r1
+ d48:	b1 f0       	breq	.+44     	; 0xd76 <_ZN5Print5writeEPKhj+0x44>
+ d4a:	06 2f       	mov	r16, r22
+ d4c:	17 2f       	mov	r17, r23
+ d4e:	ea 01       	movw	r28, r20
+// Public Methods //////////////////////////////////////////////////////////////
+
+/* default implementation: may be overridden */
+size_t Print::write(const uint8_t *buffer, size_t size)
+{
+  size_t n = 0;
+ d50:	e1 2c       	mov	r14, r1
+ d52:	f1 2c       	mov	r15, r1
+  while (size--) {
+    n += write(*buffer++);
+ d54:	d8 01       	movw	r26, r16
+ d56:	6d 91       	ld	r22, X+
+ d58:	8d 01       	movw	r16, r26
+ d5a:	d6 01       	movw	r26, r12
+ d5c:	ed 91       	ld	r30, X+
+ d5e:	fc 91       	ld	r31, X
+ d60:	01 90       	ld	r0, Z+
+ d62:	f0 81       	ld	r31, Z
+ d64:	e0 2d       	mov	r30, r0
+ d66:	c6 01       	movw	r24, r12
+ d68:	09 95       	icall
+ d6a:	e8 0e       	add	r14, r24
+ d6c:	f9 1e       	adc	r15, r25
+ d6e:	21 97       	sbiw	r28, 0x01	; 1
+
+/* default implementation: may be overridden */
+size_t Print::write(const uint8_t *buffer, size_t size)
+{
+  size_t n = 0;
+  while (size--) {
+ d70:	20 97       	sbiw	r28, 0x00	; 0
+ d72:	81 f7       	brne	.-32     	; 0xd54 <_ZN5Print5writeEPKhj+0x22>
+ d74:	02 c0       	rjmp	.+4      	; 0xd7a <_ZN5Print5writeEPKhj+0x48>
+// Public Methods //////////////////////////////////////////////////////////////
+
+/* default implementation: may be overridden */
+size_t Print::write(const uint8_t *buffer, size_t size)
+{
+  size_t n = 0;
+ d76:	e1 2c       	mov	r14, r1
+ d78:	f1 2c       	mov	r15, r1
+  while (size--) {
+    n += write(*buffer++);
+  }
+  return n;
+}
+ d7a:	c7 01       	movw	r24, r14
+ d7c:	df 91       	pop	r29
+ d7e:	cf 91       	pop	r28
+ d80:	1f 91       	pop	r17
+ d82:	0f 91       	pop	r16
+ d84:	ff 90       	pop	r15
+ d86:	ef 90       	pop	r14
+ d88:	df 90       	pop	r13
+ d8a:	cf 90       	pop	r12
+ d8c:	08 95       	ret
+
+00000d8e <_ZN5Print5printEPKc>:
+    int getWriteError() { return write_error; }
+    void clearWriteError() { setWriteError(0); }
+  
+    virtual size_t write(uint8_t) = 0;
+    size_t write(const char *str) {
+      if (str == NULL) return 0;
+ d8e:	61 15       	cp	r22, r1
+ d90:	71 05       	cpc	r23, r1
+ d92:	81 f0       	breq	.+32     	; 0xdb4 <_ZN5Print5printEPKc+0x26>
+      return write((const uint8_t *)str, strlen(str));
+ d94:	fb 01       	movw	r30, r22
+ d96:	01 90       	ld	r0, Z+
+ d98:	00 20       	and	r0, r0
+ d9a:	e9 f7       	brne	.-6      	; 0xd96 <_ZN5Print5printEPKc+0x8>
+ d9c:	31 97       	sbiw	r30, 0x01	; 1
+ d9e:	af 01       	movw	r20, r30
+ da0:	46 1b       	sub	r20, r22
+ da2:	57 0b       	sbc	r21, r23
+ da4:	dc 01       	movw	r26, r24
+ da6:	ed 91       	ld	r30, X+
+ da8:	fc 91       	ld	r31, X
+ daa:	02 80       	ldd	r0, Z+2	; 0x02
+ dac:	f3 81       	ldd	r31, Z+3	; 0x03
+ dae:	e0 2d       	mov	r30, r0
+ db0:	09 95       	icall
+ db2:	08 95       	ret
+    int getWriteError() { return write_error; }
+    void clearWriteError() { setWriteError(0); }
+  
+    virtual size_t write(uint8_t) = 0;
+    size_t write(const char *str) {
+      if (str == NULL) return 0;
+ db4:	80 e0       	ldi	r24, 0x00	; 0
+ db6:	90 e0       	ldi	r25, 0x00	; 0
+}
+
+size_t Print::print(const char str[])
+{
+  return write(str);
+}
+ db8:	08 95       	ret
+
+00000dba <__vector_9>:
+#if defined(__AVR_ATtiny24__) || defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny84__)
+ISR(TIM0_OVF_vect)
+#else
+ISR(TIMER0_OVF_vect)
+#endif
+{
+ dba:	1f 92       	push	r1
+ dbc:	0f 92       	push	r0
+ dbe:	0f b6       	in	r0, 0x3f	; 63
+ dc0:	0f 92       	push	r0
+ dc2:	11 24       	eor	r1, r1
+ dc4:	2f 93       	push	r18
+ dc6:	3f 93       	push	r19
+ dc8:	8f 93       	push	r24
+ dca:	9f 93       	push	r25
+ dcc:	af 93       	push	r26
+ dce:	bf 93       	push	r27
+	// copy these to local variables so they can be stored in registers
+	// (volatile variables must be read from memory on every access)
+	unsigned long m = timer0_millis;
+ dd0:	80 91 20 01 	lds	r24, 0x0120
+ dd4:	90 91 21 01 	lds	r25, 0x0121
+ dd8:	a0 91 22 01 	lds	r26, 0x0122
+ ddc:	b0 91 23 01 	lds	r27, 0x0123
+	unsigned char f = timer0_fract;
+ de0:	30 91 1f 01 	lds	r19, 0x011F
+
+	m += MILLIS_INC;
+	f += FRACT_INC;
+ de4:	26 e0       	ldi	r18, 0x06	; 6
+ de6:	23 0f       	add	r18, r19
+	if (f >= FRACT_MAX) {
+ de8:	2d 37       	cpi	r18, 0x7D	; 125
+ dea:	20 f4       	brcc	.+8      	; 0xdf4 <__vector_9+0x3a>
+	// copy these to local variables so they can be stored in registers
+	// (volatile variables must be read from memory on every access)
+	unsigned long m = timer0_millis;
+	unsigned char f = timer0_fract;
+
+	m += MILLIS_INC;
+ dec:	02 96       	adiw	r24, 0x02	; 2
+ dee:	a1 1d       	adc	r26, r1
+ df0:	b1 1d       	adc	r27, r1
+ df2:	05 c0       	rjmp	.+10     	; 0xdfe <__vector_9+0x44>
+	f += FRACT_INC;
+	if (f >= FRACT_MAX) {
+		f -= FRACT_MAX;
+ df4:	29 e8       	ldi	r18, 0x89	; 137
+ df6:	23 0f       	add	r18, r19
+		m += 1;
+ df8:	03 96       	adiw	r24, 0x03	; 3
+ dfa:	a1 1d       	adc	r26, r1
+ dfc:	b1 1d       	adc	r27, r1
+	}
+
+	timer0_fract = f;
+ dfe:	20 93 1f 01 	sts	0x011F, r18
+	timer0_millis = m;
+ e02:	80 93 20 01 	sts	0x0120, r24
+ e06:	90 93 21 01 	sts	0x0121, r25
+ e0a:	a0 93 22 01 	sts	0x0122, r26
+ e0e:	b0 93 23 01 	sts	0x0123, r27
+	timer0_overflow_count++;
+ e12:	80 91 24 01 	lds	r24, 0x0124
+ e16:	90 91 25 01 	lds	r25, 0x0125
+ e1a:	a0 91 26 01 	lds	r26, 0x0126
+ e1e:	b0 91 27 01 	lds	r27, 0x0127
+ e22:	01 96       	adiw	r24, 0x01	; 1
+ e24:	a1 1d       	adc	r26, r1
+ e26:	b1 1d       	adc	r27, r1
+ e28:	80 93 24 01 	sts	0x0124, r24
+ e2c:	90 93 25 01 	sts	0x0125, r25
+ e30:	a0 93 26 01 	sts	0x0126, r26
+ e34:	b0 93 27 01 	sts	0x0127, r27
+}
+ e38:	bf 91       	pop	r27
+ e3a:	af 91       	pop	r26
+ e3c:	9f 91       	pop	r25
+ e3e:	8f 91       	pop	r24
+ e40:	3f 91       	pop	r19
+ e42:	2f 91       	pop	r18
+ e44:	0f 90       	pop	r0
+ e46:	0f be       	out	0x3f, r0	; 63
+ e48:	0f 90       	pop	r0
+ e4a:	1f 90       	pop	r1
+ e4c:	18 95       	reti
+
+00000e4e <delayMicroseconds>:
+	// for the 8 MHz internal clock on the ATmega168
+
+	// for a one- or two-microsecond delay, simply return.  the overhead of
+	// the function calls takes more than two microseconds.  can't just
+	// subtract two, since us is unsigned; we'd overflow.
+	if (--us == 0)
+ e4e:	81 30       	cpi	r24, 0x01	; 1
+ e50:	91 05       	cpc	r25, r1
+ e52:	41 f0       	breq	.+16     	; 0xe64 <delayMicroseconds+0x16>
+		return;
+	if (--us == 0)
+ e54:	02 97       	sbiw	r24, 0x02	; 2
+ e56:	00 97       	sbiw	r24, 0x00	; 0
+ e58:	29 f0       	breq	.+10     	; 0xe64 <delayMicroseconds+0x16>
+		return;
+
+	// the following loop takes half of a microsecond (4 cycles)
+	// per iteration, so execute it twice for each microsecond of
+	// delay requested.
+	us <<= 1;
+ e5a:	88 0f       	add	r24, r24
+ e5c:	99 1f       	adc	r25, r25
+    
+	// partially compensate for the time taken by the preceeding commands.
+	// we can't subtract any more than this or we'd overflow w/ small delays.
+	us--;
+ e5e:	01 97       	sbiw	r24, 0x01	; 1
+#endif
+
+	// busy wait
+	__asm__ __volatile__ (
+ e60:	01 97       	sbiw	r24, 0x01	; 1
+ e62:	f1 f7       	brne	.-4      	; 0xe60 <delayMicroseconds+0x12>
+ e64:	08 95       	ret
+
+00000e66 <turnOffPWM>:
+//
+//static inline void turnOffPWM(uint8_t timer) __attribute__ ((always_inline));
+//static inline void turnOffPWM(uint8_t timer)
+static void turnOffPWM(uint8_t timer)
+{
+	switch (timer)
+ e66:	84 30       	cpi	r24, 0x04	; 4
+ e68:	41 f0       	breq	.+16     	; 0xe7a <turnOffPWM+0x14>
+ e6a:	86 30       	cpi	r24, 0x06	; 6
+ e6c:	51 f0       	breq	.+20     	; 0xe82 <turnOffPWM+0x1c>
+ e6e:	83 30       	cpi	r24, 0x03	; 3
+ e70:	59 f4       	brne	.+22     	; 0xe88 <turnOffPWM+0x22>
+	{
+		#if defined(TCCR1A) && defined(COM1A1)
+		case TIMER1A:   cbi(TCCR1A, COM1A1);    break;
+ e72:	8f b5       	in	r24, 0x2f	; 47
+ e74:	8f 77       	andi	r24, 0x7F	; 127
+ e76:	8f bd       	out	0x2f, r24	; 47
+ e78:	08 95       	ret
+		#endif
+		#if defined(TCCR1A) && defined(COM1B1)
+		case TIMER1B:   cbi(TCCR1A, COM1B1);    break;
+ e7a:	8f b5       	in	r24, 0x2f	; 47
+ e7c:	8f 7d       	andi	r24, 0xDF	; 223
+ e7e:	8f bd       	out	0x2f, r24	; 47
+ e80:	08 95       	ret
+		#if defined(TCCR1A) && defined(COM1C1)
+		case TIMER1C:   cbi(TCCR1A, COM1C1);    break;
+		#endif
+		
+		#if defined(TCCR2) && defined(COM21)
+		case  TIMER2:   cbi(TCCR2, COM21);      break;
+ e82:	85 b5       	in	r24, 0x25	; 37
+ e84:	8f 7d       	andi	r24, 0xDF	; 223
+ e86:	85 bd       	out	0x25, r24	; 37
+ e88:	08 95       	ret
+
+00000e8a <pinMode>:
+#define ARDUINO_MAIN
+#include "wiring_private.h"
+#include "pins_arduino.h"
+
+void pinMode(uint8_t pin, uint8_t mode)
+{
+ e8a:	cf 93       	push	r28
+ e8c:	df 93       	push	r29
+	uint8_t bit = digitalPinToBitMask(pin);
+ e8e:	90 e0       	ldi	r25, 0x00	; 0
+ e90:	fc 01       	movw	r30, r24
+ e92:	ec 58       	subi	r30, 0x8C	; 140
+ e94:	ff 4f       	sbci	r31, 0xFF	; 255
+ e96:	24 91       	lpm	r18, Z
+	uint8_t port = digitalPinToPort(pin);
+ e98:	fc 01       	movw	r30, r24
+ e9a:	ec 56       	subi	r30, 0x6C	; 108
+ e9c:	ff 4f       	sbci	r31, 0xFF	; 255
+ e9e:	84 91       	lpm	r24, Z
+	volatile uint8_t *reg, *out;
+
+	if (port == NOT_A_PIN) return;
+ ea0:	88 23       	and	r24, r24
+ ea2:	71 f1       	breq	.+92     	; 0xf00 <pinMode+0x76>
+
+	// JWS: can I let the optimizer do this?
+	reg = portModeRegister(port);
+ ea4:	90 e0       	ldi	r25, 0x00	; 0
+ ea6:	88 0f       	add	r24, r24
+ ea8:	99 1f       	adc	r25, r25
+ eaa:	fc 01       	movw	r30, r24
+ eac:	e2 54       	subi	r30, 0x42	; 66
+ eae:	ff 4f       	sbci	r31, 0xFF	; 255
+ eb0:	a5 91       	lpm	r26, Z+
+ eb2:	b4 91       	lpm	r27, Z
+	out = portOutputRegister(port);
+ eb4:	8c 54       	subi	r24, 0x4C	; 76
+ eb6:	9f 4f       	sbci	r25, 0xFF	; 255
+ eb8:	fc 01       	movw	r30, r24
+ eba:	c5 91       	lpm	r28, Z+
+ ebc:	d4 91       	lpm	r29, Z
+
+	if (mode == INPUT) { 
+ ebe:	61 11       	cpse	r22, r1
+ ec0:	0b c0       	rjmp	.+22     	; 0xed8 <pinMode+0x4e>
+		uint8_t oldSREG = SREG;
+ ec2:	8f b7       	in	r24, 0x3f	; 63
+                cli();
+ ec4:	f8 94       	cli
+		*reg &= ~bit;
+ ec6:	9c 91       	ld	r25, X
+ ec8:	20 95       	com	r18
+ eca:	92 23       	and	r25, r18
+ ecc:	9c 93       	st	X, r25
+		*out &= ~bit;
+ ece:	e8 81       	ld	r30, Y
+ ed0:	2e 23       	and	r18, r30
+ ed2:	28 83       	st	Y, r18
+		SREG = oldSREG;
+ ed4:	8f bf       	out	0x3f, r24	; 63
+ ed6:	14 c0       	rjmp	.+40     	; 0xf00 <pinMode+0x76>
+	} else if (mode == INPUT_PULLUP) {
+ ed8:	62 30       	cpi	r22, 0x02	; 2
+ eda:	61 f4       	brne	.+24     	; 0xef4 <pinMode+0x6a>
+		uint8_t oldSREG = SREG;
+ edc:	8f b7       	in	r24, 0x3f	; 63
+                cli();
+ ede:	f8 94       	cli
+		*reg &= ~bit;
+ ee0:	3c 91       	ld	r19, X
+ ee2:	92 2f       	mov	r25, r18
+ ee4:	90 95       	com	r25
+ ee6:	93 23       	and	r25, r19
+ ee8:	9c 93       	st	X, r25
+		*out |= bit;
+ eea:	e8 81       	ld	r30, Y
+ eec:	2e 2b       	or	r18, r30
+ eee:	28 83       	st	Y, r18
+		SREG = oldSREG;
+ ef0:	8f bf       	out	0x3f, r24	; 63
+ ef2:	06 c0       	rjmp	.+12     	; 0xf00 <pinMode+0x76>
+	} else {
+		uint8_t oldSREG = SREG;
+ ef4:	8f b7       	in	r24, 0x3f	; 63
+                cli();
+ ef6:	f8 94       	cli
+		*reg |= bit;
+ ef8:	ec 91       	ld	r30, X
+ efa:	2e 2b       	or	r18, r30
+ efc:	2c 93       	st	X, r18
+		SREG = oldSREG;
+ efe:	8f bf       	out	0x3f, r24	; 63
+	}
+}
+ f00:	df 91       	pop	r29
+ f02:	cf 91       	pop	r28
+ f04:	08 95       	ret
+
+00000f06 <digitalWrite>:
+		#endif
+	}
+}
+
+void digitalWrite(uint8_t pin, uint8_t val)
+{
+ f06:	1f 93       	push	r17
+ f08:	cf 93       	push	r28
+ f0a:	df 93       	push	r29
+ f0c:	c6 2f       	mov	r28, r22
+	uint8_t timer = digitalPinToTimer(pin);
+ f0e:	28 2f       	mov	r18, r24
+ f10:	30 e0       	ldi	r19, 0x00	; 0
+ f12:	f9 01       	movw	r30, r18
+ f14:	ec 5a       	subi	r30, 0xAC	; 172
+ f16:	ff 4f       	sbci	r31, 0xFF	; 255
+ f18:	84 91       	lpm	r24, Z
+	uint8_t bit = digitalPinToBitMask(pin);
+ f1a:	f9 01       	movw	r30, r18
+ f1c:	ec 58       	subi	r30, 0x8C	; 140
+ f1e:	ff 4f       	sbci	r31, 0xFF	; 255
+ f20:	14 91       	lpm	r17, Z
+	uint8_t port = digitalPinToPort(pin);
+ f22:	f9 01       	movw	r30, r18
+ f24:	ec 56       	subi	r30, 0x6C	; 108
+ f26:	ff 4f       	sbci	r31, 0xFF	; 255
+ f28:	d4 91       	lpm	r29, Z
+	volatile uint8_t *out;
+
+	if (port == NOT_A_PIN) return;
+ f2a:	dd 23       	and	r29, r29
+ f2c:	c9 f0       	breq	.+50     	; 0xf60 <digitalWrite+0x5a>
+
+	// If the pin that support PWM output, we need to turn it off
+	// before doing a digital write.
+	if (timer != NOT_ON_TIMER) turnOffPWM(timer);
+ f2e:	81 11       	cpse	r24, r1
+ f30:	0e 94 33 07 	call	0xe66	; 0xe66 <turnOffPWM>
+
+	out = portOutputRegister(port);
+ f34:	2d 2f       	mov	r18, r29
+ f36:	30 e0       	ldi	r19, 0x00	; 0
+ f38:	f9 01       	movw	r30, r18
+ f3a:	ee 0f       	add	r30, r30
+ f3c:	ff 1f       	adc	r31, r31
+ f3e:	ec 54       	subi	r30, 0x4C	; 76
+ f40:	ff 4f       	sbci	r31, 0xFF	; 255
+ f42:	a5 91       	lpm	r26, Z+
+ f44:	b4 91       	lpm	r27, Z
+
+	uint8_t oldSREG = SREG;
+ f46:	8f b7       	in	r24, 0x3f	; 63
+	cli();
+ f48:	f8 94       	cli
+
+	if (val == LOW) {
+ f4a:	c1 11       	cpse	r28, r1
+ f4c:	05 c0       	rjmp	.+10     	; 0xf58 <digitalWrite+0x52>
+		*out &= ~bit;
+ f4e:	ec 91       	ld	r30, X
+ f50:	10 95       	com	r17
+ f52:	1e 23       	and	r17, r30
+ f54:	1c 93       	st	X, r17
+ f56:	03 c0       	rjmp	.+6      	; 0xf5e <digitalWrite+0x58>
+	} else {
+		*out |= bit;
+ f58:	ec 91       	ld	r30, X
+ f5a:	1e 2b       	or	r17, r30
+ f5c:	1c 93       	st	X, r17
+	}
+
+	SREG = oldSREG;
+ f5e:	8f bf       	out	0x3f, r24	; 63
+}
+ f60:	df 91       	pop	r29
+ f62:	cf 91       	pop	r28
+ f64:	1f 91       	pop	r17
+ f66:	08 95       	ret
+
+00000f68 <__tablejump2__>:
+ f68:	ee 0f       	add	r30, r30
+ f6a:	ff 1f       	adc	r31, r31
+
+00000f6c <__tablejump__>:
+ f6c:	05 90       	lpm	r0, Z+
+ f6e:	f4 91       	lpm	r31, Z
+ f70:	e0 2d       	mov	r30, r0
+ f72:	09 94       	ijmp
+
+00000f74 <_exit>:
+ f74:	f8 94       	cli
+
+00000f76 <__stop_program>:
+ f76:	ff cf       	rjmp	.-2      	; 0xf76 <__stop_program>
